@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dom Manipulate</title>
+        <meta charset="utf-8">
+        
+    </head>
+    <body>
+        <p>Hello 1</p>
+        <p><h1>Hello 2</h1></p>
+        <div>div tag</div>
+        <p>Hello 3</p>
+        <button onclick=foo>Change style</button>
+        <script>
+            var btn = document.querySelector('button');
+            btn.addEventListener('click',foo);
+            function foo() { 
+                var Div = document.querySelector('div');
+                var ele=document.createElement('p');
+                ele.textContent='You Clicked a button';
+                Div.appendChild(ele);
+                // for(var p of Div){
+                // p.style.color = 'red'
+                // p.style.fontSize='50px'
+                // }
+             }
+            
+            
+            
+        </script>
+    </body>
+</html>
