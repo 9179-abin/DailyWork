@@ -16,5 +16,7 @@ public interface UserDao {
 	public User getUserById(int id);
 
 	public List<User> getAllUsers();
+	
+	public boolean isValidUser(String username, String password);
 
 }

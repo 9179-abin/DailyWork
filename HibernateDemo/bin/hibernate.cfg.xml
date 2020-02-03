@@ -13,5 +13,14 @@
         <property name="hibernate.show_sql">true</property>
         <mapping class="com.stocks.datamodel.User"/>
         <mapping class="com.stocks.datamodel.Company"/>
+         <mapping class="com.stocks.datamodel.Employee"/>
+          <mapping class="com.stocks.datamodel.PermanentEmployee"/>
+           <mapping class="com.stocks.datamodel.ContractualEmployee"/>
+           <mapping class="com.stocks.datamodel.Person"/>
+           <mapping class="com.stocks.datamodel.PassportDetails"/>
+           <mapping class="com.stocks.datamodel.Teacher"/>
+           <mapping class="com.stocks.datamodel.Student"/>
+            <mapping class="com.stocks.datamodel.Technology"/>
+           <mapping class="com.stocks.datamodel.Developer"/>
     </session-factory>
 </hibernate-configuration>

@@ -26,8 +26,8 @@ public class UserController {
 		
 //		-----Add User Details----
 		
-//		User user = new User(107, "bobby", "idgittz", "idgittz", "bobby@gmail.com", 546432134, true);
-//		curd.saveUser( user );
+		User user = new User(107, "bobby", "idgittz", "idgittz", "bobby@gmail.com", 546432134, true);
+		curd.saveUser( user );
 //		------------------------------
 		
 		
@@ -63,6 +63,15 @@ public class UserController {
 		
 //		------------GetAllUsers-----------------
 //		System.out.println(curd.getAllUsers()+"\n");
+		
+		
+		boolean status=curd.isValidUser("bobby","idgittz" );
+		if(status) {
+			System.out.println("Valid user");
+		}
+		else {
+			System.out.println("Not Valid user");
+		}
 		
 		transaction.commit();
 		session.close();

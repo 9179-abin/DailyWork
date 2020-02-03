@@ -2,9 +2,11 @@ package com.stocks.dao.impl;
 
 import java.util.List;
 
+
 import javax.transaction.Transaction;
 
 import org.hibernate.HibernateException;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -91,5 +93,34 @@ public class UserDaoImpl implements UserDao {
 			return null;
 		}
 	}
+
+	@Override
+	public boolean isValidUser(String username, String password) {
+		try {
+			Session session = sessionFactory.openSession();
+			org.hibernate.Transaction tx = session.beginTransaction();
+			Query query = session.createQuery("from User where username=:username and password1=:password"); 
+			query.setString("username",username);
+			query.setString("password",password);
+			
+			User user = (User) query.uniqueResult();
+			if(user.getPassword1() !=null) {
+				tx.commit();
+				session.close();
+				return true;
+			}
+			else {
+				return false;
+			}
+			
+		} catch (HibernateException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return false;
+			
+		}
+		
+	}
+
 
 }
