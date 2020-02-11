@@ -3,18 +3,20 @@ package com.stocks.datamodel;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import org.springframework.stereotype.Component;
+
 @Entity
 @Table(name = "StockExchange_Companies")
+@Component
 public class Company implements Serializable {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 593810099961445578L;
 	@Id
+	@GeneratedValue
 	private int id;
 	private String companyName;
 	private String city;

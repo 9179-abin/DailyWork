@@ -3,7 +3,6 @@ package com.stocks.dao;
 import java.util.List;
 
 import com.stocks.datamodel.Company;
-import com.stocks.datamodel.User;
 
 public interface CompanyDao {
 	

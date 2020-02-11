@@ -67,7 +67,7 @@ public class UserUnitTest {
 //	@Test(expected = NullPointerException.class)
 //	public void testGetUserByIdFail() {
 //		User u = userDAO.getUserById(50);
-//		assertEquals(50,userDAO.getUserById(50).getId());
+//		assertEquals(50, u.getId());
 //	}
 	
 	@Test
