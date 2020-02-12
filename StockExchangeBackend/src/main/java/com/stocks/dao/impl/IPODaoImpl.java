@@ -18,8 +18,31 @@ public class IPODaoImpl implements IPODao {
 	@Autowired
 	SessionFactory sessionFactory;
 
+//	@Override
+//	public boolean save(IPO ipo) {
+//		
+//		try {
+//			sessionFactory.getCurrentSession().save(ipo);
+//			return true;
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			return false;
+//		}
+//	}
+//
+//	@Override
+//	public boolean updateIPO(IPO ipo) {
+//		try {
+//			sessionFactory.getCurrentSession().update(ipo);
+//			return true;
+//		} catch (HibernateException e) {
+//			e.printStackTrace();
+//			return false;
+//		}
+//	}
+
 	@Override
-	public boolean save(IPO ipo) {
+	public boolean saveOrUpdate(IPO ipo) {
 		
 		try {
 			sessionFactory.getCurrentSession().save(ipo);
@@ -30,17 +53,7 @@ public class IPODaoImpl implements IPODao {
 		}
 	}
 
-	@Override
-	public boolean updateIPO(IPO ipo) {
-		try {
-			sessionFactory.getCurrentSession().update(ipo);
-			return true;
-		} catch (HibernateException e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
-
+	
 	@Override
 	public boolean deleteIPO(IPO ipo) {
 		try {

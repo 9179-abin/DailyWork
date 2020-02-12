@@ -5,17 +5,16 @@
 <%@include file="header.jsp" %>
 </head>
 <body>
-<h2>Hello World!</h2>
-<hr>
-${message}
+
 <hr>
 <%-- <ol>
 <c:forEach var = "name" items="${list}">
 <li><h3>${name}</h3></li>
 </c:forEach>
 </ol> --%>
-
-<table border = 1>
+<%-- <div class="container">
+<div class="text-center text-light bg-dark"><h1>Company List</h1></div>
+<table class="table table-dark text-white">
 <tr>
 <th>Id</th>
 <th>About Company</th>
@@ -41,6 +40,7 @@ ${message}
 </tr>
 </c:forEach>
 </table>
+</div> --%>
 
 
 </body>

@@ -26,27 +26,27 @@ public class UserDaoImpl implements UserDao {
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	@Override
-	public boolean saveUser(User user) {
-		try {
-			sessionFactory.getCurrentSession().save(user);
-			return true;
-		} catch (HibernateException e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
-
-	@Override
-	public boolean updateUser(User user) {
-		try {
-			sessionFactory.getCurrentSession().update(user);
-			return true;
-		} catch (HibernateException e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
+//	@Override
+//	public boolean saveUser(User user) {
+//		try {
+//			sessionFactory.getCurrentSession().save(user);
+//			return true;
+//		} catch (HibernateException e) {
+//			e.printStackTrace();
+//			return false;
+//		}
+//	}
+//
+//	@Override
+//	public boolean updateUser(User user) {
+//		try {
+//			sessionFactory.getCurrentSession().update(user);
+//			return true;
+//		} catch (HibernateException e) {
+//			e.printStackTrace();
+//			return false;
+//		}
+//	}
 
 	@Override
 	public boolean deleteUser(User user) {
@@ -102,6 +102,17 @@ public class UserDaoImpl implements UserDao {
 			
 		}
 		
+	}
+
+	@Override
+	public boolean saveOrUpdate(User user) {
+		try {
+			sessionFactory.getCurrentSession().saveOrUpdate(user);
+			return true;
+		} catch (HibernateException e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 

@@ -7,9 +7,11 @@ import com.stocks.datamodel.Company;
 public interface CompanyDao {
 	
 
-	public boolean saveCompany(Company company);
-
-	public boolean updateCompany(Company company);
+//	public boolean saveCompany(Company company);
+//
+//	public boolean updateCompany(Company company);
+	
+	public boolean saveOrUpdateCompany(Company company);
 
 	public boolean deleteCompany(Company company);
 

@@ -20,21 +20,32 @@ public class CompanyDaoImpl implements CompanyDao {
 	@Autowired
 	SessionFactory sessionFactory;
 
+//	@Override
+//	public boolean saveCompany(Company company) {
+//		try {
+//			sessionFactory.getCurrentSession().save(company);
+//			return true;
+//		} catch (HibernateException e) {
+//			e.printStackTrace();
+//			return false;
+//		}
+//	}
+//
+//	@Override
+//	public boolean updateCompany(Company company) {
+//		try {
+//			sessionFactory.getCurrentSession().update(company);
+//			return true;
+//		} catch (HibernateException e) {
+//			e.printStackTrace();
+//			return false;
+//		}
+//	}
+	
 	@Override
-	public boolean saveCompany(Company company) {
+	public boolean saveOrUpdateCompany(Company company) {
 		try {
-			sessionFactory.getCurrentSession().save(company);
-			return true;
-		} catch (HibernateException e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
-
-	@Override
-	public boolean updateCompany(Company company) {
-		try {
-			sessionFactory.getCurrentSession().update(company);
+			sessionFactory.getCurrentSession().saveOrUpdate(company);
 			return true;
 		} catch (HibernateException e) {
 			e.printStackTrace();

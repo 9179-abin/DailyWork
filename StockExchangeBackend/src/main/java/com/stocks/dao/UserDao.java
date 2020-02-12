@@ -6,10 +6,12 @@ import com.stocks.datamodel.User;
 
 public interface UserDao {
 	
-
-	public boolean saveUser(User user);
-
-	public boolean updateUser(User user);
+//
+//	public boolean saveUser(User user);
+//
+//	public boolean updateUser(User user);
+	
+	public boolean saveOrUpdate(User user);
 
 	public boolean deleteUser(User user);
 

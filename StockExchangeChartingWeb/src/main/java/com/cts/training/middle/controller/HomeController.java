@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.stocks.dao.CompanyDao;
 import com.stocks.dao.IPODao;
+import com.stocks.dao.StockExchangesDao;
 import com.stocks.dao.UserDao;
 import com.stocks.datamodel.Company;
 import com.stocks.datamodel.IPO;
+import com.stocks.datamodel.StockExchanges;
 import com.stocks.datamodel.User;
 
 @Controller
@@ -28,6 +30,9 @@ public class HomeController {
 	@Autowired
 	private IPODao ipoDAO;
 	
+	@Autowired
+	private StockExchangesDao stocksDAO;
+	
 //	@GetMapping("/")//any one you can use
 	@RequestMapping(value= {"/","home"})
 	public String indexPage(Model model) {
@@ -35,9 +40,6 @@ public class HomeController {
 		model.addAttribute("message", "Welcome to Spring MVC");
 //		List<String> names= new ArrayList<String>();
 		
-		List<User> users = userDAO.getAllUsers();
-		
-		model.addAttribute("list", users);
 		
 //		addNames(names);
 //		model.addAttribute("list",name);
@@ -45,11 +47,23 @@ public class HomeController {
 		
 	}
 	
+	@RequestMapping("userview")
+	public String showUser(Model model) {
+		
+//		
+//		List<User> users = userDAO.getAllUsers();
+//		
+//		model.addAttribute("list", users);
+		
+		return "viewUser";
+		
+	}
+	
 	@RequestMapping("company")
 	public String showCompany(Model model) {
 		
-		List<Company> company = companyDAO.getAllCompany();
-		model.addAttribute("companyview", company);
+//		List<Company> company = companyDAO.getAllCompany();
+//		model.addAttribute("companyview", company);
 		
 		return "viewCompany";
 	}
@@ -61,6 +75,16 @@ public class HomeController {
 		model.addAttribute("ipoview", ipo);
 		
 		return "viewIPO";
+		
+	}
+	
+	@RequestMapping("stocks")
+	public String showStocks(Model model) {
+		
+		List<StockExchanges> stock = stocksDAO.getAllStocks();
+		model.addAttribute("stockview", stock);
+		
+		return "viewStocks";
 		
 	}
 	

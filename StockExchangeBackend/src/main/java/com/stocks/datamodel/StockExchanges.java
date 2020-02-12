@@ -10,8 +10,8 @@ import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name = "stockExchanges")
-@Component
+@Table(name = "StockExchanges")
+@Component(value="stocks")
 public class StockExchanges implements Serializable {
 	
 	/**

@@ -6,9 +6,11 @@ import com.stocks.datamodel.StockExchanges;
 
 public interface StockExchangesDao {
 	
-	public boolean saveStocks(StockExchanges stocks);
-
-	public boolean updateStocks(StockExchanges stocks);
+//	public boolean saveStocks(StockExchanges stocks);
+//
+//	public boolean updateStocks(StockExchanges stocks);
+	
+	public boolean saveOrUpdateStocks(StockExchanges stocks);
 
 	public boolean deleteStocks(StockExchanges stocks);
 

@@ -23,15 +23,15 @@ public class StocksUnitTest {
 		context = new AnnotationConfigApplicationContext();
 		context.scan("com.stocks");
 		context.refresh();
-		stocks=(StockExchanges) context.getBean("stockExchanges");
-		stockExchangeDAO=(StockExchangesDao) context.getBean("stockExchangeDAO");
+		stocks=(StockExchanges) context.getBean("stocks");
+		stockExchangeDAO=(StockExchangesDao) context.getBean("stocksDAO");
 		
 		}
 	
 	@Test
 	public void testSaveStocks() {
-		StockExchanges stock = new StockExchanges(110, "BSE","asdfg","egfdsgd");
-		assertEquals(true, stockExchangeDAO.saveStocks(stocks));
+		StockExchanges stock = new StockExchanges(110, "BSE","trreg","tryryegfd");
+		assertEquals(true, stockExchangeDAO.saveOrUpdateStocks(stock));
 	}
 
 }

@@ -6,9 +6,11 @@ import com.stocks.datamodel.IPO;
 
 public interface IPODao {
 	
-	public boolean save(IPO ipo);
-
-	public boolean updateIPO(IPO ipo);
+//	public boolean save(IPO ipo);
+//
+//	public boolean updateIPO(IPO ipo);
+	
+	public boolean saveOrUpdate(IPO ipo);
 
 	public boolean deleteIPO(IPO ipo);
 

@@ -19,26 +19,37 @@ public class StockExchangesDaoImpl implements StockExchangesDao {
 	@Autowired
 	SessionFactory sessionFactory;
 
+//	@Override
+//	public boolean saveStocks(StockExchanges stocks) {
+//		try {
+//			sessionFactory.getCurrentSession().save(stocks);
+//			return true;
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			return false;
+//		}	}
+//
+//	@Override
+//	public boolean updateStocks(StockExchanges stocks) {
+//		try {
+//			sessionFactory.getCurrentSession().update(stocks);
+//			return true;
+//		} catch (HibernateException e) {
+//			e.printStackTrace();
+//			return false;
+//		}
+//	}
+	
 	@Override
-	public boolean saveStocks(StockExchanges stocks) {
+	public boolean saveOrUpdateStocks(StockExchanges stocks) {
 		try {
-			sessionFactory.getCurrentSession().save(stocks);
+			sessionFactory.getCurrentSession().saveOrUpdate(stocks);
 			return true;
 		} catch (Exception e) {
 			e.printStackTrace();
 			return false;
 		}	}
-
-	@Override
-	public boolean updateStocks(StockExchanges stocks) {
-		try {
-			sessionFactory.getCurrentSession().update(stocks);
-			return true;
-		} catch (HibernateException e) {
-			e.printStackTrace();
-			return false;
-		}
-	}
+	
 
 	@Override
 	public boolean deleteStocks(StockExchanges stocks) {

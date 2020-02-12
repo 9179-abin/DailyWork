@@ -5,12 +5,11 @@
 <%@include file="header.jsp" %>
 </head>
 <body>
-<h2>Hello World!</h2>
 <hr>
-${message}
 
-
-<table border = 1>
+<%-- <div class="container">
+<div class="text-center text-light bg-dark"><h1>IPO List</h1></div>
+<table class="table table-dark text-white">
 <tr>
 <th>Id</th>
 <th>Company name</th>
@@ -38,7 +37,7 @@ ${message}
 </tr>
 </c:forEach>
 </table>
-
+</div> --%>
 
 </body>
 </html>
