@@ -21,7 +21,7 @@ public class UserController {
 	@Autowired
 	UserDao userDAO;
 
-	@GetMapping("/user-home")
+	@GetMapping("user-home")
 	public String userPage(Model model) {
 		
 		List<User> users = userDAO.getAllUsers();

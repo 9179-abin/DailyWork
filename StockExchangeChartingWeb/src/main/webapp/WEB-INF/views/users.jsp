@@ -105,9 +105,8 @@
 	</div>
 </div>
 </div>
-<br>
-<br>
-<br>
+
+
 <div class="row">
 <div class="container">
 	<div class="text-center text-light bg-dark">

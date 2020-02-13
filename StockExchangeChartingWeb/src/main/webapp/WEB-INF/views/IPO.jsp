@@ -100,7 +100,6 @@
 <br>
 <br>
 <br>
-<br>
 <div class="row">
 <div class="container">
 <div class="text-center text-light bg-dark"><h1>IPO List</h1></div>

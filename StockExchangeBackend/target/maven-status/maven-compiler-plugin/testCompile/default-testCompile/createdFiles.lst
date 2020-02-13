@@ -1,0 +1,5 @@
+com\stocks\test\IPOUnitTest.class
+com\stocks\test\StocksUnitTest.class
+com\stocks\test\CompanyUnitTest.class
+com\stocks\test\UserUnitTest.class
+com\cts\maven\model\AppTest.class

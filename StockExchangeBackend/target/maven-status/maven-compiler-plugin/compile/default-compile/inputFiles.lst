@@ -2,8 +2,10 @@ C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\
 C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\datamodel\Teacher.java
 C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\datamodel\PassportDetails.java
 C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\datamodel\Employee.java
+C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\datamodel\StockExchanges.java
 C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\dao\impl\CompanyDaoImpl.java
 C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\datamodel\Company.java
+C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\dao\impl\IPODaoImpl.java
 C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\datamodel\ContractualEmployee.java
 C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\datamodel\User.java
 C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\config\HibernateConfiguration.java
@@ -13,7 +15,10 @@ C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\
 C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\datamodel\Person.java
 C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\dao\impl\Checker.java
 C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\datamodel\Technology.java
+C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\dao\StockExchangesDao.java
 C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\datamodel\StockExchange.java
 C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\dao\UserDao.java
 C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\dao\CompanyDao.java
+C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\dao\IPODao.java
+C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\dao\impl\StockExchangesDaoImpl.java
 C:\Users\Lenovo\eclipse-workspace\StockExchangeBackend\src\main\java\com\stocks\datamodel\PermanentEmployee.java
