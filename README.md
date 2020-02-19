@@ -169,4 +169,24 @@ full stack trainee
 	Basic.
 	Filter
 	Through Xml
-	Through Java Cponfiguration
+	Through Java Configuration
+
+## Day 39
+	Internal Hackathon
+## Day 40
+	New Mentor..
+	-----------
+	Spring Security from data base users
+	Sql Joins
+	Sql sub queries
+
+## Day 41
+	PL SQL
+	SQL Procedures
+	SQL Functions
+	SQL Triggers
+	SQL Views
+## Day 42
+	Spring Web Services(spring rest intro.)
+	REST controller
+	Spring Boot Introduction
