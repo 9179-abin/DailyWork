@@ -196,3 +196,10 @@ full stack trainee
 
 ## Day 44
 	Integration of angular and spring boot 
+
+## Day 45
+	Angular and Spring Boot Integration
+## Day 46
+	Angular and Spring Boot Integration
+## Day 47
+	User E mail verification

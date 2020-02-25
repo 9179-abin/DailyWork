@@ -1,0 +1,28 @@
+{
+    "stockExchanges": [
+      {
+        "id": 100,
+        "name": "BSE",
+        "aboutSE": "asdfgh",
+        "address": "asdfgh"
+      },
+      {
+        "id": 101,
+        "name": "NSE",
+        "aboutSE": "asdfgh",
+        "address": "asdfgh"
+      },
+      {
+        "id": 102,
+        "name": "NYSE",
+        "aboutSE": "asdfgh",
+        "address": "asdfgh"
+      },
+      {
+        "id": 103,
+        "name": "NASDAQ",
+        "aboutSE": "asdfgh",
+        "address": "asdfgh"
+      }
+    ]
+  }
