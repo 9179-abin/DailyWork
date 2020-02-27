@@ -203,3 +203,7 @@ full stack trainee
 	Angular and Spring Boot Integration
 ## Day 47
 	User E mail verification
+## Day 48
+	Project Work, Mail Link Activation
+## Day 49
+	Project Work, Mail Link Activation and Unique value validation

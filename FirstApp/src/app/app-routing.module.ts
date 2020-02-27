@@ -33,7 +33,7 @@ const routes: Routes = [
   {path: '', component:HomeComponent},
   {path: 'home', component:HomeComponent},
   {path:'register', component:RegisterComponent},
-  {path:'login' , component:LoginComponent},
+  {path:'login/:id' , component:LoginComponent},
   {path:'upload' , component:UploadComponent},
   {path:'activate' , component:ActivateComponent},
   {path:'view', component:ViewComponent},

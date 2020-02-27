@@ -10,12 +10,13 @@ import { Observable } from 'rxjs';
 export class UserService {
   // users = USERS;
   private httpUrl='http://localhost:8080/users/';
+  private httpUrls='http://localhost:8080/useractivate/';
   constructor(private httpClient: HttpClient, @Inject (HttpClient) private ht) { }
 
   getAllUsers(): Observable <User[]> {
     return this.httpClient.get<User[]>("http://localhost:8080/users/");
   }
-  saveUser (user:User): Observable<User> {
+  saveUser (user:User){
     return this.ht.post("http://localhost:8080/users/", user);
   }
   deleteUser(id:number): Observable<User> {
@@ -28,8 +29,11 @@ export class UserService {
     return this.httpClient.get<User>(this.httpUrl+id);
   }
   serviceActivation(obj){
-    return this.httpClient.post(`http://localhost:8080/users`,obj)
+    return this.ht.put(`http://localhost:8080/activate`,obj)
   }
+  // activatemessage(obj){
+  //   return this.httpClient.get("http://localhost:8080/activate");
+  // }
   // isAdmin() : boolean{
   //   return true;
   // }
