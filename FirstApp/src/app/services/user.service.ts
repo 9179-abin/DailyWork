@@ -22,8 +22,8 @@ export class UserService {
   deleteUser(id:number): Observable<User> {
     return this.httpClient.delete<User>(this.httpUrl+ id);
   }
-  updateUserInfo(user:User): Observable<User> {
-    return this.httpClient.put<User>("http://localhost:8080/users/",user);
+  updateUserInfo(user:User){
+    return this.ht.put("http://localhost:8080/users/",user);
   } 
   getUserById(id:number): Observable<User> {
     return this.httpClient.get<User>(this.httpUrl+id);

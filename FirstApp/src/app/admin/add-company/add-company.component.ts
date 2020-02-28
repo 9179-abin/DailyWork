@@ -26,7 +26,7 @@ export class AddCompanyComponent implements OnInit {
   
   onSubmit(){
     console.log(this.addCompany.value);
-    this.router.navigate(['/viewCompany']);
+    this.router.navigate(['viewCompany']);
   }
   ngOnInit() {
     this.addCompany=this.formBuilder.group({

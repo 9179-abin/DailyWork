@@ -19,7 +19,7 @@ export class UpdateCompanyComponent implements OnInit {
   updateCompanyDetails(){
     this.companyService.updateCompanyInfo(this.updateCompany.value).subscribe(u => {
       alert("Successfully Updated");
-      this.router.navigate(['viewCompany']);
+      this.router.navigate(['/viewCompany']);
       
     });    
   }

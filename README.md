@@ -207,3 +207,5 @@ full stack trainee
 	Project Work, Mail Link Activation
 ## Day 49
 	Project Work, Mail Link Activation and Unique value validation
+## Day 50
+	Project Work, Implemented Spring boot Services
