@@ -12,7 +12,6 @@ import { Router } from '@angular/router';
 export class UpdateUserComponent implements OnInit {
    updateUser: FormGroup;
    navbarOpen = false;
-   val:number;
   
     toggleNavbar() {
       this.navbarOpen = !this.navbarOpen;
@@ -20,17 +19,11 @@ export class UpdateUserComponent implements OnInit {
   constructor(private formBuilder:FormBuilder, private UserService : UserService, private router: Router) { }
   UpdateUser(){
     this.UserService.updateUserInfo(this.updateUser.value).subscribe(u => {
-      if(u.res==1){
-        alert("Successfully Updated");
-      this.router.navigate(['view']);}
-      else{
-        alert("Not Updated");
-      }
+      this.router.navigate(['view']);
     })
   }
   onSubmit() {
     console.log(this.updateUser.value);
-    
     this.router.navigate(['/view']);
   }
   ngOnInit() {
@@ -38,7 +31,7 @@ export class UpdateUserComponent implements OnInit {
     // alert(id);
     if(+id > 0){
       this.UserService.getUserById(+id).subscribe(ip =>{
-        
+        alert("Successfully Updated");
         this.updateUser.patchValue(ip);
       });
     }
