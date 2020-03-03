@@ -7,10 +7,10 @@ import { Company } from '../models/company';
 })
 export class CompanyService {
   
-  private httpUrl='http://localhost:8080/company/';
+  private httpUrl='http://localhost:8001/company/';
   constructor(private httpClient:HttpClient, @Inject (HttpClient) private ht) { }
   getAllCompanies(): Observable <Company[]>{
-    return this.httpClient.get<Company[]>("http://localhost:8080/company/");
+    return this.httpClient.get<Company[]>("http://localhost:8001/company/");
   }
   saveCompany(company:Company): Observable<Company>{
     return this.httpClient.post<Company>(this.httpUrl, company);
@@ -19,7 +19,7 @@ export class CompanyService {
     return this.httpClient.delete<Company>(this.httpUrl+ id);
   }
   updateCompanyInfo(company:Company): Observable<Company> {
-    return this.httpClient.put<Company>("http://localhost:8080/company/",company);
+    return this.httpClient.put<Company>("http://localhost:8001/company/",company);
   } 
   getCompanyById(id:number): Observable<Company> {
     return this.httpClient.get<Company>(this.httpUrl+id);

@@ -1,6 +1,6 @@
 export class Company {
     id:number;
-    name : string;
+    companyName : string;
     city:string;
     state:string;
     pincode : number;
@@ -12,7 +12,7 @@ export class Company {
         turnover : number, aboutCompany: string, stockExchange: string, 
          sector: string){
         this.id=id;
-        this.name=name;
+        this.companyName=name;
         this.city=city;
         this.state=state;
         this.pincode=pincode;

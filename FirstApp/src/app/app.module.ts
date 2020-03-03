@@ -28,6 +28,7 @@ import { UserIpoViewComponent } from './user/user-ipo-view/user-ipo-view.compone
 import { AddStockPricesComponent } from './admin/add-stock-prices/add-stock-prices.component';
 import { ViewStockPricesComponent } from './admin/view-stock-prices/view-stock-prices.component';
 import { UpdateStockPriceComponent } from './admin/update-stock-price/update-stock-price.component';
+import { ActivateComponent } from './admin/activate/activate.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { UpdateStockPriceComponent } from './admin/update-stock-price/update-sto
     UserIpoViewComponent,
     AddStockPricesComponent,
     ViewStockPricesComponent,
-    UpdateStockPriceComponent
+    UpdateStockPriceComponent,
+    ActivateComponent
     
   ],
   imports: [

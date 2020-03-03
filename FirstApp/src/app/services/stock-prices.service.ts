@@ -7,7 +7,7 @@ import{StockPrices} from '../models/stockPrices';
 })
 export class StockPricesService {
 
-  private httpUrl='http://localhost:8080/stockprice/';
+  private httpUrl='http://localhost:8005/stockprice/';
 
   constructor(private httpClient:HttpClient, @Inject (HttpClient) private ht ) { }
 

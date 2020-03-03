@@ -1,21 +1,21 @@
 export class IPO {
     id:number;
-    name : string;
+    companyName : string;
     stockExchange: string;
     priceShare : number;
-    noOfShare : number;
-    Address: string;
+    noOfShares : number;
+    address: string;
     city:string;
     state:string;
     pincode : number;
     date : Date;
-    constructor(id:number, name:string, stockExchange: string, priceShare : number, noOfShare : number, Address: string, city:string, state:string, pincode : number, date: Date){
+    constructor(id:number, companyName:string, stockExchange: string, priceShare : number, noOfShares : number, address: string, city:string, state:string, pincode : number, date: Date){
         this.id=id;
-        this.name=name;
+        this.companyName=name;
         this.stockExchange=stockExchange;
         this.priceShare=priceShare;
-        this.noOfShare=noOfShare;
-        this.Address=Address;
+        this.noOfShares=noOfShares;
+        this.address=address;
         this.city=city;
         this.state=state;
         this.pincode=pincode;

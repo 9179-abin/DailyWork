@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class StockExchangeService {
 
-  private httpUrl = 'http://localhost:8080/stocks/'
+  private httpUrl = 'http://localhost:8004/stocks/'
 
   constructor(private httpClient:HttpClient) { }
 
@@ -16,13 +16,13 @@ export class StockExchangeService {
     return this.httpClient.get< STOCK[]>(this.httpUrl);
   }
   saveStocks(stockExchange:STOCK): Observable<STOCK>{
-    return this.httpClient.post<STOCK>("http://localhost:8080/stocks/",stockExchange);
+    return this.httpClient.post<STOCK>("http://localhost:8004/stocks/",stockExchange);
   }
   deleteStockDetails(id:number): Observable<STOCK>{
     return this.httpClient.delete<STOCK>(this.httpUrl+ id);  
   }
   updateStockInfo(stockExchange:STOCK): Observable<STOCK> {
-    return this.httpClient.put<STOCK>("http://localhost:8080/stocks/",stockExchange);
+    return this.httpClient.put<STOCK>("http://localhost:8004/stocks/",stockExchange);
   } 
   getStockById(id:number): Observable<STOCK> {
     return this.httpClient.get<STOCK>(this.httpUrl+id);

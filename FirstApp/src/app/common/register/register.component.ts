@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-
+  msg;
   // signupForm: FormGroup;
   registerUser: FormGroup;
   constructor(private formBuilder: FormBuilder, private userService: UserService, private router:Router) { }
@@ -25,12 +25,19 @@ export class RegisterComponent implements OnInit {
 
     addUser() {
       this.userService.saveUser(this.registerUser.value).subscribe(data => {
-        console.log("User inserted successfully"+data);
+        if(data.res==1){
+          alert("Successfully inserted");
+        }
+        else if(data.res==0){
+          alert("Email already exists");
+        }
+        else{
+          alert("Fatal error");
+        }
       });
     }
     onSubmit() {
       console.log(this.registerUser.value);
-      alert("Successfully Inserted");
       this.router.navigate(['/userLanding']);
     }
   

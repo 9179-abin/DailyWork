@@ -1,7 +1,25 @@
 
-<br><br>
+
+
+<div class="container-fluid">
+    <div class="row my-2">
+        <div class="col-md-2 bg-transparent border">
+         <div class="sidenav-responsive" >
+             <!-- <div class="list-group list-group-flush"> -->
+               <a routerLink="/view" id="widget" class="list-group-item list-group-item-action bg-transparent btn-lg text-dark">Manage Users</a>
+               <a routerLink="/viewCompany" id="widget" class="list-group-item list-group-item-action bg-transparent btn-lg text-dark">Manage Company</a>
+               <a routerLink="/viewIpo" id="widget" class="list-group-item list-group-item-action bg-transparent btn-lg text-dark">Manage IPO</a>
+               <a routerLink="/viewstocks" id="widget" class="list-group-item list-group-item-action bg-transparent btn-lg text-dark">Manage StockExchanges</a>
+               <a routerLink="/upload" id="widget" class="list-group-item list-group-item-action bg-transparent btn-lg text-dark">Upload Stocks</a>
+             <!-- </div> -->
+             </div>        
+        </div> 
+        <div class="col bg-transparent mx-2">
+
+            <br><br>
 <div class="container">
-    <div class="text-center text-light bg-dark"><h1>User List</h1></div>
+    <div class="text-center text-light bg-dark table-responsive"><h1>User List</h1></div>
+    <div class="table-responsive">
 <table  class="table table-dark text-white">
     <tr>
         <th>ID</th>
@@ -13,7 +31,7 @@
     </tr>
     <tr *ngFor="let user of users">
         <td>{{user.id}}</td>
-        <td>{{user.username}}</td>
+        <td>{{user.name}}</td>
         <td>{{user.password1}}</td>
         <td>{{user.email}}</td>
         <td>{{user.phone}}</td>
@@ -21,7 +39,11 @@
         <td><button class="btn btn-primary" (click)="updateUser(user)">Update</button></td>
         
     </tr>
-</table>
+</table></div>
 
 
 </div>
+
+
+            </div>
+            </div>
