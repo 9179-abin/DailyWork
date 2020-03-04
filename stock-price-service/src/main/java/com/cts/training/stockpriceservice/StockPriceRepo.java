@@ -1,5 +1,9 @@
 package com.cts.training.stockpriceservice;
 
-public interface StockPriceRepo {
+import org.springframework.data.jpa.repository.JpaRepository;
+
+
+
+public interface StockPriceRepo extends JpaRepository<StockPrice, Integer> {
 
 }
