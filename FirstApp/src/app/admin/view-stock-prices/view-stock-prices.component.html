@@ -6,7 +6,7 @@
                <a routerLink="/view" id="widget" class="list-group-item list-group-item-action bg-transparent btn-lg text-dark">Manage Users</a>
                <a routerLink="/viewCompany" id="widget" class="list-group-item list-group-item-action bg-transparent btn-lg text-dark">Manage Company</a>
                <a routerLink="/viewIpo" id="widget" class="list-group-item list-group-item-action bg-transparent btn-lg text-dark">Manage IPO</a>
-               <a routerLink="/viewstocks" id="widget" class="list-group-item list-group-item-action bg-transparent btn-lg text-dark">Manage StockExchanges</a>
+               <a routerLink="/viewstocks" id="widget" class="list-group-item list-group-item-action bg-transparent btn-lg text-dark">Manage Stocks</a>
                <a routerLink="/upload" id="widget" class="list-group-item list-group-item-action bg-transparent btn-lg text-dark">Upload Stocks</a>
              <!-- </div> -->
              </div>        
@@ -32,13 +32,13 @@
         <td>{{u.currentPrice}}</td>
         <td>{{u.date}}</td>
         <td>{{u.time}}</td>
-        <td><button class="btn btn-danger" (click)="deleteStockPrice(u)">Delete</button></td>
+        <td><button class="btn btn-danger" (click)="deleteStockPrice(u)"><i class="fas fa-trash fa-lg"></i></button></td>
         <td><button class="btn btn-primary" (click)="updateStockPrice(u)">Update</button></td>
         
     </tr>
 </table></div>
 <div class="row justify-content-center">
-    <button class="btn btn-success" routerLink='/addStockPrices'> Add Stock Prices</button>
+    <button class="btn btn-success" routerLink='/viewCompany'> Add Stock Prices</button>
     
     </div>
 

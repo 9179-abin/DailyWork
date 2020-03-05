@@ -2,6 +2,8 @@ package com.cts.training.userservice;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -14,9 +16,18 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
+//import com.cts.training.userservice.feign.UserServiceProxy;
+
+
 @CrossOrigin(origins = "*")
 @RestController
 public class UserController {
+	
+	@Autowired
+	private UserServiceProxy proxy;
+	
+	Logger logger = LoggerFactory.getLogger(this.getClass());
+	
 	
 	@Autowired
 	UserServices userServices;
@@ -50,6 +61,13 @@ public class UserController {
 
 		}
 	
+	@GetMapping("/company-by-users")
+	public List<Company> findAllCompanyForUsers(){
+		logger.info("getAll Company invoked....");
+		List<Company> companyDTO = proxy.findAll();
+		logger.info("Information --> {}",companyDTO);
+		return proxy.findAll();
+	}
 	
 	
 	@DeleteMapping("/users/{id}")

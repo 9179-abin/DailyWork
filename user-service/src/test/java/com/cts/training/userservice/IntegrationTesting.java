@@ -27,21 +27,37 @@ class IntegrationTesting {
 	HttpHeaders headers = new HttpHeaders();
 	TestRestTemplate restTemplate=new TestRestTemplate();
 	@Test
-	public void test() {
-		String url="http://localhost:"+port+"/registerUser";
+	public void test()  throws Exception{
+		String url="http://localhost:"+port+"/users";
 		System.out.println("Port : :"+url);
 		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
 		HttpEntity<String> entity = new HttpEntity<String>(null,headers);
 		ResponseEntity<String> response= restTemplate.exchange(url,HttpMethod.GET,entity,String.class);
-		String expected="{\r\n" + 
-				"        \"id\": 63,\r\n" + 
-				"        \"username\": \"Ajax\",\r\n" + 
-				"        \"password1\": \"werewr\",\r\n" + 
-				"        \"password2\": \"wrwrewrw\",\r\n" + 
-				"        \"email\": \"babymol.bobby@gmail.com\",\r\n" + 
-				"        \"phone\": 567890,\r\n" + 
-				"        \"enabled\": true\r\n" + 
-				"    }";
+		String expected="{\"id\":12,\"username\":\"Libin\",\"password1\":\"tesla\"";
+		System.out.println("TEST 1 :: Response Body :::: " + response.getBody());
+		assertTrue(response.getBody().contains(expected));
+	
+	}
+	@Test
+	public void test1()  throws Exception{
+		String url="http://localhost:"+port+"/users/1";
+		System.out.println("Port : :"+url);
+		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+		HttpEntity<String> entity = new HttpEntity<String>(null,headers);
+		ResponseEntity<String> response= restTemplate.exchange(url,HttpMethod.GET,entity,String.class);
+		String expected="{\"id\":12,\"username\":\"Libin\",\"password1\":\"tesla\"";
+		System.out.println("TEST 1 :: Response Body :::: " + response.getBody());
+		assertTrue(response.getBody().contains(expected));
+	
+	}
+	@Test
+	public void addTest()  throws Exception{
+		String url="http://localhost:"+port+"/users";
+		System.out.println("Port : :"+url);
+		headers.setAccept(Arrays.asList(MediaType.APPLICATION_JSON));
+		HttpEntity<String> entity = new HttpEntity<String>(null,headers);
+		ResponseEntity<String> response= restTemplate.exchange(url,HttpMethod.GET,entity,String.class);
+		String expected="{\"id\":11,\"username\":\"abinjoshi\",\"password1\":\"telsuko\"";
 		System.out.println("TEST 1 :: Response Body :::: " + response.getBody());
 		assertTrue(response.getBody().contains(expected));
 	
