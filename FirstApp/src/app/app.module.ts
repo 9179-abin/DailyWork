@@ -29,6 +29,8 @@ import { AddStockPricesComponent } from './admin/add-stock-prices/add-stock-pric
 import { ViewStockPricesComponent } from './admin/view-stock-prices/view-stock-prices.component';
 import { UpdateStockPriceComponent } from './admin/update-stock-price/update-stock-price.component';
 import { ActivateComponent } from './admin/activate/activate.component';
+import { UserinfoComponent } from './user/userinfo/userinfo.component';
+import { UserInfoComponent } from './user/user-info/user-info.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { ActivateComponent } from './admin/activate/activate.component';
     AddStockPricesComponent,
     ViewStockPricesComponent,
     UpdateStockPriceComponent,
-    ActivateComponent
+    ActivateComponent,
+    UserinfoComponent,
+    UserInfoComponent
     
   ],
   imports: [

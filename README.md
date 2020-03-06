@@ -211,3 +211,19 @@ full stack trainee
 	Project Work, Implemented Spring boot Services
 ## Day 51
 	Project Work,Microservices
+## Day 52
+	Microservices
+## Day 53
+	Spring cloud-Starter
+	ribbon
+	feign basics
+	netflix-eureka
+## Day 54
+	Spring Boot Testing
+## Day 55
+	Netflix-zuul-server
+	project
+## Day 56
+	Continuos Integration
+	Dockers
+	Continuos Delivery

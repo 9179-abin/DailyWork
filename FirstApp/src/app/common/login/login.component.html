@@ -11,20 +11,20 @@
                     <div class="card-body bg-light">
 
                         <p class="card-text">Details:&nbsp;</p>
-                        <form  (ngSubmit)="onLog()">
+                        <form [formGroup]="logged" (ngSubmit)="onLog()">
 
                             <div class="input-group mt-3 mb-3 form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Username</span>
                                 </div>
-                                <input id="username" type="text" class="form-control" />
+                                <input id="username" type="text" class="form-control" formControlName="name" />
                             </div>
 
                             <div class="input-group mb-3 form-group">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Password</span>
                                 </div>
-                                <input id="password1" type="password" class="form-control" />
+                                <input id="password1" type="password" class="form-control" formControlName="pass"/>
                             </div>
 
                             <div class="form-check">

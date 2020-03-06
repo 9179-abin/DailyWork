@@ -27,6 +27,8 @@ import { AddStockPricesComponent } from './admin/add-stock-prices/add-stock-pric
 import { ViewStockPricesComponent } from './admin/view-stock-prices/view-stock-prices.component';
 import { UpdateStockPriceComponent } from './admin/update-stock-price/update-stock-price.component';
 import { ActivateComponent } from './admin/activate/activate.component';
+import { userInfo } from 'os';
+import { UserInfoComponent } from './user/user-info/user-info.component';
 
 
 const routes: Routes = [
@@ -74,7 +76,8 @@ const routes: Routes = [
   {path:"useripo",component:UserIpoViewComponent},
   {path:"userLanding/useripo",component:UserIpoViewComponent},
   {path:"userLanding/comparecharts",component:ComparechartsComponent},
-  {path:"userLanding/comparesector",component:ComparesectorComponent}
+  {path:"userLanding/comparesector",component:ComparesectorComponent},
+  {path:"user-info",component:UserInfoComponent}
 
 ];
 

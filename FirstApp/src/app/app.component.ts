@@ -11,7 +11,8 @@ import { HomeComponent } from './home/home.component';
 })
 export class AppComponent {
   title = 'FirstApp';
-  isAdmin=false;
+  isAdmin:number;
+  whom:String;
   navbarOpen = false;
   
   toggleNavbar() {
@@ -20,6 +21,7 @@ export class AppComponent {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit() {
+   
     // This would print out the json object which contained
     // all of our query parameters for this particular route.
     
