@@ -1,1 +1,24 @@
-<p>user-info works!</p>
+<div class="container">
+    <br>
+<div class="card shadow">
+    <p class="h4 card-header">List of IPOs</p>
+    <div class="card-body bg-light">
+        <div class="table-responsible">
+        <table class="table table-borderless table-hover">
+            <tr *ngFor="let u of user"> 
+                <th>Name</th>
+                <td>{{user.username}}</td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>{{user.email}}</td>
+            </tr>
+            <tr>
+                <th></th>
+                <td>{{user.phone}}</td>
+            </tr>
+                    </div>
+
+    </div>
+</div></div>
+
