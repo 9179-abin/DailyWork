@@ -9,22 +9,22 @@
     crossorigin="anonymous">
 
   <title>Home</title> -->
-  <!-- <style>
+<!-- <style>
 	body {
 			background-image: url('../assets/blb2.jpg');
 			background-attachment: relative;
 			background-size: cover;
     } -->
-    <!-- /* .jumbotron{
+<!-- /* .jumbotron{
                 background-size: cover;    
               } */
     /* td{
         padding: 10px;;
     } */ -->
-     <!-- </style> -->
-  <!-- </head>
+<!-- </style> -->
+<!-- </head>
   <body> -->
-	  <header class="bg-dark">
+<!-- <header class="bg-dark">
           <h1 class="display-3 text-center my-4 text-light lead ">Stock Market Exchange</h1>
     </header>
     <div style="min-height: 70vh;">
@@ -44,34 +44,33 @@
               <a routerLink="adminservices" class="nav-link text-light"><i
                 class="fas fa-sitemap"> Services</i></a>
           </li>
-            <!-- <li class="nav-item">
-                <a routerLink="register" class="nav-link btn btn-success text-white my-1">Register</a>
-            </li>
-            <li class="nav-item">
-              <a routerLink="login" class="nav-link btn btn-success text-white mx-2 my-1">Login</a>
-          </li> -->
+           
             
         </ul>
     </div>
-</nav>
-   
-<div *ngIf="isAdmin">
+</nav> -->
+
+<!-- <div *ngIf="isAdmin">
   <main>
   <app-admin-services></app-admin-services>
 </main>
-</div>
-	<div *ngIf="!isAdmin">
-    <main>
-    <router-outlet></router-outlet>
-  </main>
+</div> -->
+<!-- <div *ngIf="!isAdmin"> -->
+<header class="bg-dark">
+    <h1 class="display-3 text-center my-4 text-light lead ">Stock Market Exchange</h1>
+</header>
+<main style="min-height: 100vh;">
+
+  <router-outlet></router-outlet>
+</main>
+<!-- </div> -->
+
+
+<footer class="page-footer font-small blue" style="padding-top: 100px;">
+  <div class="footer-copyright text-center py-3 bg-dark text-white mb-3">© 2020 Copyright:
+    <a href="https://github.com/9179-abin/DailyWork"> CTS_GIT</a>
   </div>
-
-  ,
-    <footer class="page-footer font-small blue" style="padding-top: 100px;">
-
-      <div class="footer-copyright text-center py-3 bg-dark text-white mb-3">© 2020 Copyright:
-        <a href="https://github.com/9179-abin/DailyWork"> CTS_GIT</a>
-      </div></footer>
+</footer>
 <!--      
   </body>
   </html> -->

@@ -29,8 +29,13 @@ import { AddStockPricesComponent } from './admin/add-stock-prices/add-stock-pric
 import { ViewStockPricesComponent } from './admin/view-stock-prices/view-stock-prices.component';
 import { UpdateStockPriceComponent } from './admin/update-stock-price/update-stock-price.component';
 import { ActivateComponent } from './admin/activate/activate.component';
-import { UserinfoComponent } from './user/userinfo/userinfo.component';
+// import { UserinfoComponent } from './user/userinfo/userinfo.component';
 import { UserInfoComponent } from './user/user-info/user-info.component';
+import { ShowchartComponent } from './user/showchart/showchart.component';
+import { HighchartsChartComponent } from "../../node_modules/highcharts-angular";
+import { NavbarcommonComponent } from './navbarcommon/navbarcommon.component';
+import { NavbaruserComponent } from './navbaruser/navbaruser.component';
+import { NavbaradminComponent } from './navbaradmin/navbaradmin.component';
 
 @NgModule({
   declarations: [
@@ -59,8 +64,12 @@ import { UserInfoComponent } from './user/user-info/user-info.component';
     ViewStockPricesComponent,
     UpdateStockPriceComponent,
     ActivateComponent,
-    UserinfoComponent,
-    UserInfoComponent
+    UserInfoComponent,
+    ShowchartComponent,
+    HighchartsChartComponent,
+    NavbarcommonComponent,
+    NavbaruserComponent,
+    NavbaradminComponent
     
   ],
   imports: [

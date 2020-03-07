@@ -1,3 +1,4 @@
+><app-navbaruser></app-navbaruser>
 <div class="container" style="width:auto;">
     <div class="row m-4">
         <div class="col" style="height: 70vh;">
@@ -5,14 +6,18 @@
                 <p class="h4 card-header text-center">Compare Company Charts</p>
                 <form class="form-group border p-5 border-curved mt-5"  [formGroup]="compare">
                     <label for="companyname">Company Name 1:</label>
-                    <!-- <input type="text" class="form-control" placeholder="Name of Company"  id="companyname"> -->
-                    <select id="company1" class="form-control" formControlName="c1" >
+                    <!-- <select id="company1" class="form-control" formControlName="c1" >
                         <option *ngFor="let comp of company" value={{comp.id}}>{{comp.companyName}}</option>
-                    </select><br>
+                    </select><br> -->
+                    <input type="text" class="form-control"/>
+                        <!-- <input class="searchList" value={{comp.id}} *ngFor="let comp of company | async"/> -->
+
+
                     <label for="companyname">Company Name 2:</label>
                     <select id="company2" class="form-control" formControlName="c2">
                         <option  *ngFor="let comp of company" value={{comp.id}}>{{comp.companyName}}</option>
                     </select><br>
+
                     <div class="text-center">
                         <div class="col">
                             <button type="submit" class="btn btn-success"  (click)="compareCompany()">Compare</button>

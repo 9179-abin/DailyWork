@@ -7,8 +7,6 @@ import javax.persistence.Id;
 
 public class StockPriceDTO {
 
-	@Id
-	private int cid;
 	private String stockExchange;
 	private long currentPrice;
 	private LocalDate date;
@@ -16,13 +14,9 @@ public class StockPriceDTO {
 	
 	public StockPriceDTO() {}
 
-	public int getCid() {
-		return cid;
-	}
 
-	public void setCid(int cid) {
-		this.cid = cid;
-	}
+
+
 
 	public String getStockExchange() {
 		return stockExchange;
@@ -58,7 +52,7 @@ public class StockPriceDTO {
 
 	public StockPriceDTO(int cid, String stockExchange, long currentPrice, LocalDate date, LocalTime time) {
 		super();
-		this.cid = cid;
+
 		this.stockExchange = stockExchange;
 		this.currentPrice = currentPrice;
 		this.date = date;
