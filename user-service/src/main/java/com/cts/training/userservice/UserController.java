@@ -28,6 +28,11 @@ public class UserController {
 	@Autowired
 	private UserServiceProxy proxy;
 	
+	@GetMapping(value="/login")
+	public ResponseEntity<?> login() {
+		return new ResponseEntity<HttpStatus>(HttpStatus.OK);
+	}
+	
 	Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	
@@ -50,9 +55,10 @@ public class UserController {
 	}
 	
 	@GetMapping("/users/{id}")
-	public Users findOne(@PathVariable int id) {
+//	public Users findOne(@PathVariable int id) {
+	public ResponseEntity<?> findOne(@PathVariable int id) {
 		Users u = userServices.getOne(id);
-		return u;
+		return new ResponseEntity<Users>(u,HttpStatus.OK);
 	}
 	
 	@PostMapping("/users")

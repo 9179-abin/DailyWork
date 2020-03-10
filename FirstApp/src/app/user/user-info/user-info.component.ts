@@ -13,11 +13,11 @@ export class UserInfoComponent implements OnInit {
   constructor(private router: Router, private service:UserService) { }
 
   updateUser(){
-    
+    this.router.navigate(['/update-user']);
   }
 
   ngOnInit() {
-    const c = localStorage.getItem('iduser');
+    const c = localStorage.getItem('userId');
     this.service.getUserById(+c).subscribe(data =>{
       this.user=data;
     })

@@ -1,16 +1,8 @@
-
+<app-navbaradmin></app-navbaradmin>
 <div class="container-fluid">
     <div class="row my-2">
         <div class="col-md-2 bg-transparent border">
-         <div class="sidenav-responsive" >
-             <!-- <div class="list-group list-group-flush"> -->
-               <a routerLink="/view" id="widget" class="list-group-item list-group-item-action bg-transparent btn-lg text-dark">Manage Users</a>
-               <a routerLink="/viewCompany" id="widget" class="list-group-item list-group-item-action bg-transparent btn-lg text-dark">Manage Company</a>
-               <a routerLink="/viewIpo" id="widget" class="list-group-item list-group-item-action bg-transparent btn-lg text-dark">Manage IPO</a>
-               <a routerLink="/viewstocks" id="widget" class="list-group-item list-group-item-action bg-transparent btn-lg text-dark">Manage Stocks</a>
-               <a routerLink="/upload" id="widget" class="list-group-item list-group-item-action bg-transparent btn-lg text-dark">Upload Stocks</a>
-             <!-- </div> -->
-             </div>        
+            <app-adminsidenav></app-adminsidenav>      
         </div> 
         <div class="col bg-transparent mx-2">
 
@@ -28,7 +20,7 @@
     </tr>
     <tr *ngFor ="let stock of stocks">
         <td>{{stock.id}}</td>
-        <td>{{stock.name}}</td>
+        <td>{{stock.stockExchanges}}</td>
         <td>{{stock.aboutSE}}</td>
         <td>{{stock.address}}</td>
         <td><button class="btn btn-danger" (click)="deleteStocks(stock)"><i class="fas fa-trash fa-lg"></i></button></td>

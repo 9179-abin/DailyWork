@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserServices {
 				BeanUtils.copyProperties(userDTO, us);
 				userRepo.save(us);
 				sm.setSubject("Testing Mail");
-				sm.setText("Account created click on 'http://localhost:5200/activate?" + us.getEmail()+ "'");
+				sm.setText("Account created click on 'http://localhost:5400/activate?" + us.getEmail()+ "'");
 				jms.send(sm);
 				return "{\"res\":\"1\"}";
 			}
@@ -70,6 +70,10 @@ public class UserServiceImpl implements UserServices {
 	@Override
 	public String alter(UserDTO userDTO) {
 		Users us = new Users();
+		
+		if(getOne(userDTO.getId()).isEnabled()) {
+			userDTO.setEnabled(true);
+		}
 		BeanUtils.copyProperties(userDTO, us);
 		us=userRepo.save(us);
 		if(us!=null) {

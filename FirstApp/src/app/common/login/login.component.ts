@@ -5,6 +5,9 @@ import { map } from 'rxjs/operators';
 import { User } from 'src/app/models/user';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
+import { AuthService } from 'src/app/services/auth.service';
+
+
 
 @Component({
   selector: 'app-login',
@@ -17,93 +20,103 @@ export class LoginComponent implements OnInit {
   i:number;
   valid:boolean;
   isAdmin:boolean;
-  logged:FormGroup;
+  loginForm:FormGroup;
   users : User[];
-  constructor(private router:Router, public activatedRoute: ActivatedRoute, private services:UserService, private formBuilder:FormBuilder) { }
+  constructor(private router:Router, public activatedRoute: ActivatedRoute, private services:UserService, private formBuilder:FormBuilder, private auth: AuthService) { }
   signupForm: FormGroup;
-  onLog()
-  {
+
+  login(){
+    let username = this.loginForm.get('username').value;
+    let password = this.loginForm.get('password').value;
+    const result = this.auth.authenticate(username, password);
+    console.log(result);
+  }
+
+
+
+  // onLog()
+  // {
     
-    this.n=this.users.length;
-    if(this.val=='1')
-    {
-      this.isAdmin=true;
-      for(this.i=0;this.i<this.n;this.i++)
-      {
-        if((this.logged.value['name']==='admin') && (this.logged.value['pass']==='password'))
-        {
-          console.log(this.users[this.i].username,this.logged.value['name']);
-          this.valid=true;
-          break;
-        }
-        else{
-          console.log(this.users[this.i].username,this.logged.value['name']);
-          this.valid=false;
-        }
-      }
-      if(this.valid===true)
-      {
-        alert("Welcome");
-        localStorage.removeItem('who');
-        localStorage.setItem('who','admin');
-        this.router.navigate(['/adminservices']);
-      }
-      else{
-        alert("Wrong Credentials!..Try Again");
-        this.router.navigate(['/home']);
-      }
+  //   this.n=this.users.length;
+  //   if(this.val=='1')
+  //   {
+  //     this.isAdmin=true;
+  //     for(this.i=0;this.i<this.n;this.i++)
+  //     {
+  //       if((this.logged.value['name']==='admin') && (this.logged.value['pass']==='password'))
+  //       {
+  //         console.log(this.users[this.i].username,this.logged.value['name']);
+  //         this.valid=true;
+  //         break;
+  //       }
+  //       else{
+  //         console.log(this.users[this.i].username,this.logged.value['name']);
+  //         this.valid=false;
+  //       }
+  //     }
+  //     if(this.valid===true)
+  //     {
+  //       alert("Welcome");
+  //       localStorage.removeItem('who');
+  //       localStorage.setItem('who','admin');
+  //       this.router.navigate(['/adminservices']);
+  //     }
+  //     else{
+  //       alert("Wrong Credentials!..Try Again");
+  //       this.router.navigate(['/home']);
+  //     }
 
-    }
-    else if(this.val=='0')
-    {
-      this.isAdmin=false;
-      for(this.i=0;this.i<this.n;this.i++)
-      {
-        if((this.users[this.i].username===this.logged.value['name']) && (this.users[this.i].password1===this.logged.value['pass']))
-        {
-          console.log(this.users[this.i].username,this.logged.value['name'])
-          this.valid=true;
-          break;
-        }
-        else{
-          console.log(this.users[this.i].username,this.logged.value['name'])
-          this.valid=false;
-        }
-      }
-      if(this.valid===true)
-      {
-        alert("Welcome");
-        localStorage.removeItem('iduser');
-        localStorage.setItem('iduser',this.users[this.i].id.toString());
-        this.router.navigate(['/userLanding']);
-      }
-      else{
-        alert("Wrong Credentials!..Try Again");
-        this.router.navigate(['/home']);
-      }
+  //   }
+  //   else if(this.val=='0')
+  //   {
+  //     this.isAdmin=false;
+  //     for(this.i=0;this.i<this.n;this.i++)
+  //     {
+  //       if((this.users[this.i].username===this.logged.value['name']) && (this.users[this.i].password1===this.logged.value['pass']))
+  //       {
+  //         console.log(this.users[this.i].username,this.logged.value['name'])
+  //         this.valid=true;
+  //         break;
+  //       }
+  //       else{
+  //         console.log(this.users[this.i].username,this.logged.value['name'])
+  //         this.valid=false;
+  //       }
+  //     }
+  //     if(this.valid===true)
+  //     {
+  //       alert("Welcome");
+  //       localStorage.removeItem('userId');
+  //       localStorage.setItem('userId',this.users[this.i].id.toString());
+  //       this.router.navigate(['/userLanding']);
+  //     }
+  //     else{
+  //       alert("Wrong Credentials!..Try Again");
+  //       this.router.navigate(['/home']);
+  //     }
 
-    }  
-  }
-  onAdmin(){
-    if(this.val=='1'){
-      this.isAdmin=true;
-      }
-    else if(this.val=='0'){
-      this.isAdmin=false;
-    }  
-  }
+  //   }  
+  // }
+  // onAdmin(){
+  //   if(this.val=='1'){
+  //     this.isAdmin=true;
+  //     }
+  //   else if(this.val=='0'){
+  //     this.isAdmin=false;
+  //   }  
+  // }
  
   ngOnInit() {
-    this.logged=this.formBuilder.group({
-      name:[''],
-      pass:['']
+    this.loginForm=this.formBuilder.group({
+      username:[''],
+      password:['']
     })
 
 
-    this.activatedRoute.paramMap.subscribe(params => { 
-      this.val = params.get('id'); 
-      this.onAdmin();
-  });
+  //   this.activatedRoute.paramMap.subscribe(params => { 
+  //     this.val = params.get('id'); 
+  //     this.onAdmin();
+  // });
   this.services.getAllUsers().subscribe(data =>{
     this.users=data;
   });
@@ -111,3 +124,4 @@ export class LoginComponent implements OnInit {
       console.log("User inserted successfully"+this.val);
   }
 }
+

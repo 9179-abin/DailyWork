@@ -22,7 +22,7 @@ export class UpdateUserComponent implements OnInit {
     this.UserService.updateUserInfo(this.updateUser.value).subscribe(u => {
       if(u.res==1){
         alert("Successfully Updated");
-      this.router.navigate(['view']);}
+      this.router.navigate(['/user-info']);}
       else{
         alert("Not Updated");
       }
@@ -31,7 +31,7 @@ export class UpdateUserComponent implements OnInit {
   onSubmit() {
     console.log(this.updateUser.value);
     
-    this.router.navigate(['/view']);
+    this.router.navigate(['/user-info']);
   }
   ngOnInit() {
     const id = localStorage.getItem('userId');

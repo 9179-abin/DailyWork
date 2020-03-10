@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Routes, RouterModule, Router, ActivatedRoute, Params } from '@angular/router';
-
+declare var $:any;
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

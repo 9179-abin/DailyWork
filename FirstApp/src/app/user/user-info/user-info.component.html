@@ -1,33 +1,11 @@
-<!-- <div class="container justify-content-center">
-    <br> -->
-<!-- <div class="card">
-    <p class="h4 card-header"><img src="../../../assets/admin.png" class="img-thumbnail  bg-dark" width="70" height="70"> {{user.username}}</p>
-    <div class="card-body">
-        <div class="table-responsible">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <table class="table table-borderless table-hover text-center">
-                    <tr>
-                        <th>Email</th>
-                        <td>{{user.email}}</td>
-                    </tr>
-                    <tr>
-                        <th>Phone</th>
-                        <td>{{user.phone}}</td>
-                    </tr>
-                    <tr>
-                        <th></th>
-                        <td><button class="btn btn-primary" (click)="updateUser(user)"><i class="fas fa-user-edit fa-lg"></i></button></td>
-                    </tr>
-                    </table>
-            </div>
-        </div>
-     </div>
 
-    </div> -->
-<!-- </div> -->
 <app-navbaruser></app-navbaruser>
-
+<div class="container-fluid">
+    <div class="row my-2">
+        <div class="col-md-2 bg-transparent border">
+            <app-usersidenav></app-usersidenav>
+        </div>
+        <div class="col-12 col-sm-10 bg-transparent">
 <div class="row justify-content-center">
 <div class="w-auto border p-3 col-md-4 shadow rounded h-50 my-5">
     <h4 class="text-center display-4"><img src="../../../assets/admin.png" class="img-thumbnail  bg-dark" width="70" height="70"> {{user.username}}</h4>
@@ -35,4 +13,6 @@
     <h5 class="text-center">{{user.phone}}</h5>
     <a class="btn btn-info btn-lg btn-block mt-3 mb-3 " (click)="updateUser()"><i class="fas fa-user-edit fa-lg"></i></a>
   </div>
+</div>
+</div>
 </div>

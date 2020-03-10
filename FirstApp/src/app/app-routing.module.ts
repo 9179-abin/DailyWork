@@ -30,13 +30,17 @@ import { ActivateComponent } from './admin/activate/activate.component';
 // import { userInfo } from 'os';
 import { UserInfoComponent } from './user/user-info/user-info.component';
 import { ShowchartComponent } from './user/showchart/showchart.component';
+import { NavbarcommonComponent } from './navbarcommon/navbarcommon.component';
+import { NavbaradminComponent } from './navbaradmin/navbaradmin.component';
+import { NavbaruserComponent } from './navbaruser/navbaruser.component';
 
 
 const routes: Routes = [
   {path: '', component:HomeComponent},
   {path: 'home', component:HomeComponent},
   {path:'register', component:RegisterComponent},
-  {path:'login/:id' , component:LoginComponent},
+  // {path:'login/:id' , component:LoginComponent},
+  {path:'login' , component:LoginComponent},
   {path:'upload' , component:UploadComponent},
   {path:'activate' , component:ActivateComponent},
   {path:'view', component:ViewComponent},
@@ -49,6 +53,9 @@ const routes: Routes = [
   {path:'adminservices/view', component:ViewComponent},
   {path:'adminservices/addcompany', component:AddCompanyComponent},
   {path:'adminservices/viewCompany', component:ViewCompanyComponent},
+  {path:'navbarcommon', component:NavbarcommonComponent},
+  {path:'navbaradmin', component:NavbaradminComponent},
+  {path:'navbaruser', component:NavbaruserComponent},
   {path:'adminservices/viewIpo', component:ViewIPOComponent},
   {path:'adminservices/addIpo', component:AddIpoComponent},
   {path:'adminservices/add-stocks', component:AddStocksComponent},

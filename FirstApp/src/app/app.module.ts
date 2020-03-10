@@ -36,6 +36,11 @@ import { HighchartsChartComponent } from "../../node_modules/highcharts-angular"
 import { NavbarcommonComponent } from './navbarcommon/navbarcommon.component';
 import { NavbaruserComponent } from './navbaruser/navbaruser.component';
 import { NavbaradminComponent } from './navbaradmin/navbaradmin.component';
+import { UsersidenavComponent } from './user/usersidenav/usersidenav.component';
+import { AdminsidenavComponent } from './admin/adminsidenav/adminsidenav.component';
+// import {MatAutocompleteModule} from '@angular/material/autocomplete';
+// import { MatFormFieldModule } from '@angular/material/form-field';
+// import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -69,7 +74,9 @@ import { NavbaradminComponent } from './navbaradmin/navbaradmin.component';
     HighchartsChartComponent,
     NavbarcommonComponent,
     NavbaruserComponent,
-    NavbaradminComponent
+    NavbaradminComponent,
+    UsersidenavComponent,
+    AdminsidenavComponent
     
   ],
   imports: [
@@ -79,6 +86,9 @@ import { NavbaradminComponent } from './navbaradmin/navbaradmin.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
+    // MatAutocompleteModule,
+    // MatFormFieldModule,
+    // MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

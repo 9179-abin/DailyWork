@@ -20,13 +20,14 @@ public class Users {
 	private String email;
 	private long phone;
 	private boolean enabled;
+	private String role="ROLE_USER";
 	
 	public Users() {}
 	
 	
 	
 	public Users(int id, String username, String password1, String password2, String email, long phone,
-			boolean enabled) {
+			boolean enabled,String role) {
 		super();
 		this.id = id;
 		this.username = username;
@@ -35,6 +36,7 @@ public class Users {
 		this.email = email;
 		this.phone = phone;
 		this.enabled = enabled;
+		this.role=role;
 	}
 
 
@@ -80,6 +82,18 @@ public class Users {
 	}
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+
+
+
+	public String getRole() {
+		return role;
+	}
+
+
+
+	public void setRole(String role) {
+		this.role = role;
 	}
 	
 	

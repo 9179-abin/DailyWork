@@ -3,7 +3,7 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
-
+declare var $:any;
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
   msg;
   // signupForm: FormGroup;
   registerUser: FormGroup;
+  message:String;
   constructor(private formBuilder: FormBuilder, private userService: UserService, private router:Router) { }
   // onSubmit() {
   //    console.log(this.signupForm.value);
@@ -25,15 +26,20 @@ export class RegisterComponent implements OnInit {
 
     addUser() {
       this.userService.saveUser(this.registerUser.value).subscribe(data => {
-        if(data.res==1){
-          alert("Successfully inserted");
-        }
-        else if(data.res==0){
-          alert("Email already exists");
-        }
-        else{
-          alert("Fatal error");
-        }
+        console.log(data.res[1]);
+
+        // if(data.res==1){
+        //   this.message="Successfully Created"
+        //   $('#myModal').modal('show');
+        // }
+        // else if(data.res==0){
+        //   this.message="Email Already Exists!"
+        //   $('#myError').modal('show');
+        // }
+        // else{
+        //   this.message="Fatal Error!"
+        //   $('#myError').modal('show');
+        // }
       });
     }
     onSubmit() {

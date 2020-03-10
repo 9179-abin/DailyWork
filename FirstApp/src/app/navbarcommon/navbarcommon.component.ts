@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var $:any;
 
 @Component({
   selector: 'app-navbarcommon',
@@ -8,14 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarcommonComponent implements OnInit {
   isAdmin:number;
   navbarOpen = false;
-  
+  message:String;
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
   }
   constructor() { }
-  message(){
-    alert("Access Denied");
-    alert("Login as Admin or User !");
+  Onmessage(){
+    this.message="Access Denied! Login as User/Admin"
+    $('#myModal').modal('show');
+    // $.MessageBox("A plain MessageBox can replace Javascript's window.alert(), and it looks definitely better...");
   }
   ngOnInit() {
   }

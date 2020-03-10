@@ -4,6 +4,8 @@ import { Company } from 'src/app/models/company';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { debounceTime } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import {Observable} from 'rxjs';
+import {map, startWith} from 'rxjs/operators';
 
 @Component({
   selector: 'app-comparecharts',
@@ -14,6 +16,10 @@ export class ComparechartsComponent implements OnInit {
   compare:FormGroup;
   constructor(private service:CompanyCompareService, private formBuilder:FormBuilder, private router:Router) { }
   company : Company[];
+  options: string[];
+  i:number;
+  myControl = new FormControl();
+  filteredOptions: Observable<string[]>;
   compareCompany(){
     localStorage.removeItem("c1");
     localStorage.removeItem("c2");
@@ -22,15 +28,19 @@ export class ComparechartsComponent implements OnInit {
     this.router.navigate(['/showcharts'])
   }
   ngOnInit() {
-
+    this.service.getAllCompany().subscribe(data =>{
+      this.company=data;
+    });
     this.compare = this.formBuilder.group({
       c1:[''],
       c2:['']
     });
-
-    this.service.getAllCompany().subscribe(data =>{
-      this.company=data;
-    })
+    // this.filteredOptions = this.myControl.valueChanges
+    //   .pipe(
+    //     startWith(''),
+    //     map(value => this._filter(value))
+    //   );
+      
 
     this.compare.valueChanges.subscribe(result=>console.log(result));
     // this.company = this.compare
@@ -41,5 +51,12 @@ export class ComparechartsComponent implements OnInit {
     //   switch(value => this.service.getAllCompany()({companyName:value},1))
     // );
   }
+  // private _filter(value: string): string[] {
+  //   const filterValue = value.toLowerCase();
+  //   for(this.i=0;this.i<this.company.length;this.i++){
+  //     this.options[this.i]=this.company[this.i].companyName;
+  //   }
+  //   return this.options.filter(option => option.toLowerCase().includes(filterValue));
+  // }
 
 }

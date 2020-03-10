@@ -9,11 +9,11 @@
   
   <ul class="navbar-nav mr-auto">
       <li class="nav-item ">
-          <a routerLink="home" class="nav-link text-light"> <i
+          <a routerLink="/home" class="nav-link text-light"> <i
             class="fas fa-home"> Home</i></a>
       </li>
       <li class="nav-item">
-        <a (click)="message()" class="nav-link text-light"><i
+        <a (click)="Onmessage()" class="nav-link text-light"><i
           class="fas fa-sitemap"> Services</i></a>
     </li>
      
@@ -21,3 +21,18 @@
   </ul>
 </div>
 </nav>
+<div id="alert" class="modal fade" tabindex="-1" id="myModal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-body text-center">
+          {{message}}
+        </h5>
+        <button class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-block btn-danger" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

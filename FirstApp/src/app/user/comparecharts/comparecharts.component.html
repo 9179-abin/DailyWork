@@ -1,4 +1,13 @@
-><app-navbaruser></app-navbaruser>
+<app-navbaruser></app-navbaruser>
+
+<div class="container-fluid">
+    <div class="row my-2">
+        <div class="col-md-2 bg-transparent border">
+            <app-usersidenav></app-usersidenav>
+        </div>
+        <div class="col-12 col-sm-10 bg-transparent">
+
+
 <div class="container" style="width:auto;">
     <div class="row m-4">
         <div class="col" style="height: 70vh;">
@@ -6,17 +15,27 @@
                 <p class="h4 card-header text-center">Compare Company Charts</p>
                 <form class="form-group border p-5 border-curved mt-5"  [formGroup]="compare">
                     <label for="companyname">Company Name 1:</label>
-                    <!-- <select id="company1" class="form-control" formControlName="c1" >
+                    <select id="company1" class="form-control" formControlName="c1" >
                         <option *ngFor="let comp of company" value={{comp.id}}>{{comp.companyName}}</option>
-                    </select><br> -->
-                    <input type="text" class="form-control"/>
-                        <!-- <input class="searchList" value={{comp.id}} *ngFor="let comp of company | async"/> -->
-
-
+                    </select><br>
                     <label for="companyname">Company Name 2:</label>
                     <select id="company2" class="form-control" formControlName="c2">
                         <option  *ngFor="let comp of company" value={{comp.id}}>{{comp.companyName}}</option>
                     </select><br>
+                    <!-- <mat-form-field class="example-full-width">
+                        <input type="text"
+                               placeholder="Pick one"
+                               aria-label="Number"
+                               matInput
+                               [formControl]="myControl"
+                               [matAutocomplete]="auto">
+                        <mat-autocomplete #auto="matAutocomplete">
+                          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                            {{option}}
+                          </mat-option>
+                        </mat-autocomplete>
+                      </mat-form-field> -->
+
 
                     <div class="text-center">
                         <div class="col">
@@ -28,4 +47,6 @@
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
