@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin-services',
@@ -7,11 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminServicesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
   navbarOpen = false;
   
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
+  
+  }
+  logout(){
+    sessionStorage.removeItem("userType");
+    sessionStorage.removeItem("username");
+    sessionStorage.removeItem("token");
+    this.router.navigate(['/home']);
   }
 
   ngOnInit() {

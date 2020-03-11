@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-userlanding',
@@ -7,7 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserlandingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router) { }
+
+  logout(){
+    sessionStorage.removeItem("userType");
+    sessionStorage.removeItem("username");
+    sessionStorage.removeItem("token");
+    this.router.navigate(['/home']);
+  }
 
   ngOnInit() {
   }

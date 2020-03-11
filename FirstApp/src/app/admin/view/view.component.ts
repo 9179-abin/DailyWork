@@ -12,6 +12,7 @@ export class ViewComponent implements OnInit {
 
   constructor(private userServices: UserService, private router: Router) { }
   users : User[];
+  i:number;
   deleteUser(user:User){
     this.userServices.deleteUser(user.id).subscribe();
     this.users = this.users.filter(u => u!==user);
@@ -24,7 +25,14 @@ export class ViewComponent implements OnInit {
   ngOnInit() {
     // this.users= this.userServices.getAllUsers();
     this.userServices.getAllUsers().subscribe(data => {
-      this.users=data;
+      for(this.i=0;this.i<data.length;this.i++){
+        if(!data[this.i].admin)
+        {
+          this.users=data;
+        }
+      }
+      // this.users=data;
+      
     });
     
   }

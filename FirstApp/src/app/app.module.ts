@@ -9,7 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './common/login/login.component';
 import { UploadComponent } from './admin/upload/upload.component';
 import { ViewComponent } from './admin/view/view.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AdminServicesComponent } from './admin/admin-services/admin-services.component';
 import { UpdateUserComponent } from './admin/update-user/update-user.component';
 import { AddCompanyComponent } from './admin/add-company/add-company.component';
@@ -38,6 +38,7 @@ import { NavbaruserComponent } from './navbaruser/navbaruser.component';
 import { NavbaradminComponent } from './navbaradmin/navbaradmin.component';
 import { UsersidenavComponent } from './user/usersidenav/usersidenav.component';
 import { AdminsidenavComponent } from './admin/adminsidenav/adminsidenav.component';
+import { HttpInterseptorService } from './services/http-interseptor.service';
 // import {MatAutocompleteModule} from '@angular/material/autocomplete';
 // import { MatFormFieldModule } from '@angular/material/form-field';
 // import { MatInputModule } from '@angular/material/input';
@@ -90,7 +91,13 @@ import { AdminsidenavComponent } from './admin/adminsidenav/adminsidenav.compone
     // MatFormFieldModule,
     // MatInputModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass:HttpInterseptorService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

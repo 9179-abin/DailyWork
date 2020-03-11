@@ -1,6 +1,7 @@
 package com.cts.training.userservice;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.springframework.beans.BeanUtils;
@@ -98,5 +99,13 @@ public class UserServiceImpl implements UserServices {
 		{
 			return "{\"result\":\"0\"}";
 		}
+	}
+
+	@Override
+	public UserDTO getUserByUsernameAndPassword(String username, String password) throws NoSuchElementException {
+		Users user = userRepo.findByUsernameAndPassword(username, password).get();
+		UserDTO userDTO = new UserDTO();
+		BeanUtils.copyProperties(user, userDTO);
+		return userDTO;
 	}
 }

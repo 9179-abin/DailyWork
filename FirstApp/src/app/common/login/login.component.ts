@@ -6,7 +6,7 @@ import { User } from 'src/app/models/user';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { AuthService } from 'src/app/services/auth.service';
-
+declare var $:any;
 
 
 @Component({
@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   i:number;
   valid:boolean;
   isAdmin:boolean;
+  message:string;
   loginForm:FormGroup;
   users : User[];
   constructor(private router:Router, public activatedRoute: ActivatedRoute, private services:UserService, private formBuilder:FormBuilder, private auth: AuthService) { }
@@ -28,8 +29,33 @@ export class LoginComponent implements OnInit {
   login(){
     let username = this.loginForm.get('username').value;
     let password = this.loginForm.get('password').value;
-    const result = this.auth.authenticate(username, password);
-    console.log(result);
+    const result = this.auth.authenticate(username, password).subscribe(data=>{
+      if(sessionStorage.getItem('userType')==='user'){
+        localStorage.removeItem('userId');
+        localStorage.setItem('userId',data.id.toString());
+        console.log(data);
+        if(data.enabled){
+          this.message="Login Successfull!";
+          // $('#myMess').modal('show');
+          this.router.navigate(['/userLanding']);
+        }
+        else{
+          this.message="Please Activate Your Account!";
+          // $('#myMess').modal('show');
+          this.message="Check your mail for activation Link!";
+          // $('#myMess').modal('show');
+          this.router.navigate(['/home']);
+        }
+        
+      }
+      else if(sessionStorage.getItem('userType')==='admin'){
+        this.message="Welcome Admin!";
+        // $('#myMess').modal('show');
+        this.router.navigate(['/adminservices']);
+      }
+
+    });
+    // console.log(result);
   }
 
 
@@ -121,7 +147,6 @@ export class LoginComponent implements OnInit {
     this.users=data;
   });
       // alert('Welcome : '+this.val);
-      console.log("User inserted successfully"+this.val);
   }
 }
 

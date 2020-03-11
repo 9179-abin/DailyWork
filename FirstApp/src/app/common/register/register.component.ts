@@ -10,10 +10,9 @@ declare var $:any;
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  msg;
   // signupForm: FormGroup;
   registerUser: FormGroup;
-  message:String;
+  message:string;
   constructor(private formBuilder: FormBuilder, private userService: UserService, private router:Router) { }
   // onSubmit() {
   //    console.log(this.signupForm.value);
@@ -26,26 +25,28 @@ export class RegisterComponent implements OnInit {
 
     addUser() {
       this.userService.saveUser(this.registerUser.value).subscribe(data => {
-        console.log(data.res[1]);
-
-        // if(data.res==1){
-        //   this.message="Successfully Created"
-        //   $('#myModal').modal('show');
-        // }
-        // else if(data.res==0){
-        //   this.message="Email Already Exists!"
-        //   $('#myError').modal('show');
-        // }
-        // else{
-        //   this.message="Fatal Error!"
-        //   $('#myError').modal('show');
-        // }
+        if(data.res==1){
+          this.message="Successfully Created";
+          console.log(data.res);
+          $('#myMessage').modal('show');
+          this.message="Check your email for Activation Link";
+          $('#myMessage').modal('show');
+        }
+        else if(data.res==0){
+          this.message="Email Already Exists!";
+          console.log(data.res);
+          $('#myMessage').modal('show');
+        }
+        else{
+          this.message="Fatal Error!";
+          $('#myMessage').modal('show');
+        }
       });
     }
-    onSubmit() {
-      console.log(this.registerUser.value);
-      this.router.navigate(['/userLanding']);
-    }
+    // onSubmit() {
+    //   console.log(this.registerUser.value);
+    //   this.router.navigate(['/userLanding']);
+    // }
   
   ngOnInit() {
     // this.signupForm = new FormGroup({
@@ -59,8 +60,7 @@ export class RegisterComponent implements OnInit {
     this.registerUser = this.formBuilder.group({
       id: ['', Validators.required],
       username: ['', Validators.required],
-      password1: ['',Validators.required],
-      password2: ['',Validators.required],
+      password: ['',Validators.required],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', Validators.required]
     });

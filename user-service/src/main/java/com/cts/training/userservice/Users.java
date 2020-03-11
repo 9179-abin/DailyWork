@@ -15,10 +15,10 @@ public class Users {
 	@GeneratedValue
 	private int id;
 	private String username;
-	private String password1;
-	private String password2;
+	private String password;
 	private String email;
 	private long phone;
+	private boolean admin;
 	private boolean enabled;
 	private String role="ROLE_USER";
 	
@@ -26,17 +26,17 @@ public class Users {
 	
 	
 	
-	public Users(int id, String username, String password1, String password2, String email, long phone,
-			boolean enabled,String role) {
+	public Users(int id, String username, String password, String email, long phone,
+			boolean enabled,String role,boolean admin) {
 		super();
 		this.id = id;
 		this.username = username;
-		this.password1 = password1;
-		this.password2 = password2;
+		this.password = password;
 		this.email = email;
 		this.phone = phone;
 		this.enabled = enabled;
 		this.role=role;
+		this.admin=admin;
 	}
 
 
@@ -53,17 +53,11 @@ public class Users {
 	public void setUsername(String username) {
 		this.username = username;
 	}
-	public String getPassword1() {
-		return password1;
+	public String getPassword() {
+		return password;
 	}
-	public void setPassword1(String password1) {
-		this.password1 = password1;
-	}
-	public String getPassword2() {
-		return password2;
-	}
-	public void setPassword2(String password2) {
-		this.password2 = password2;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	public String getEmail() {
 		return email;
@@ -94,6 +88,18 @@ public class Users {
 
 	public void setRole(String role) {
 		this.role = role;
+	}
+
+
+
+	public boolean isAdmin() {
+		return admin;
+	}
+
+
+
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
 	}
 	
 	

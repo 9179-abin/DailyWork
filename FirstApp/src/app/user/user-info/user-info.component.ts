@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/user.service';
 import { User } from 'src/app/models/user';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-user-info',
@@ -10,7 +11,7 @@ import { User } from 'src/app/models/user';
 })
 export class UserInfoComponent implements OnInit {
   user:User;
-  constructor(private router: Router, private service:UserService) { }
+  constructor(private router: Router, private service:UserService, private auth:AuthService) { }
 
   updateUser(){
     this.router.navigate(['/update-user']);
