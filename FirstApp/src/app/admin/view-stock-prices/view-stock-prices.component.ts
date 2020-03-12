@@ -26,6 +26,7 @@ export class ViewStockPricesComponent implements OnInit {
   ngOnInit() {
     this.stockPriceServices.getAllStockPrices().subscribe(data => {
       this.stockprice=data;
+      console.log(data);
     })
 
   }

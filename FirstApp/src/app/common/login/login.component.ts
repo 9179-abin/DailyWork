@@ -54,7 +54,11 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['/adminservices']);
       }
 
-    });
+    },
+    error =>{
+      console.log(error);
+    }
+    );
     // console.log(result);
   }
 
@@ -143,9 +147,9 @@ export class LoginComponent implements OnInit {
   //     this.val = params.get('id'); 
   //     this.onAdmin();
   // });
-  this.services.getAllUsers().subscribe(data =>{
-    this.users=data;
-  });
+  // this.services.getAllUsers().subscribe(data =>{
+  //   this.users=data;
+  // });
       // alert('Welcome : '+this.val);
   }
 }

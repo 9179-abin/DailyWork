@@ -2,16 +2,17 @@ import { Injectable, Inject } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import{StockPrices} from '../models/stockPrices';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class StockPricesService {
 
-  private httpUrl='http://localhost:8005/stockprice/';
+  private httpUrl=environment.host + 'stock-price-service/stockprice/';
 
   constructor(private httpClient:HttpClient, @Inject (HttpClient) private ht ) { }
 
-  getAllStockPrices(): Observable <StockPrices[]> {
+  getAllStockPrices(): Observable<StockPrices[]> {
     return this.httpClient.get<StockPrices[]>(this.httpUrl);
   }
 

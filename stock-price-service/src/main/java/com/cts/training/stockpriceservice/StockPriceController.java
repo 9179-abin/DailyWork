@@ -1,6 +1,7 @@
 package com.cts.training.stockpriceservice;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -31,6 +32,15 @@ public class StockPriceController {
 
 	@Autowired
 	StockPriceService stockPriceServices;
+	
+	
+	
+	@GetMapping
+	(value="/stockPrice/companyStockPriceBetween/{companyCode}/{stockExchange}/{startDate}/{endDate}", produces="application/json")
+	public ResponseEntity<?> getCompanyStockPriceDayBetween(@PathVariable String companyCode, @PathVariable String stockExchange, @PathVariable String startDate, @PathVariable String endDate){
+		return new ResponseEntity<List<StockPriceOnPeriod>>(stockPriceServices.getCompanyStockPriceBetween(companyCode, stockExchange, LocalDate.parse(startDate), LocalDate.parse(endDate)),HttpStatus.OK);
+	}
+
 
 	@GetMapping("/stockprice")
 	public List<StockPrice> findAll() {

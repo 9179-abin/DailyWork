@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbaruser',
@@ -11,7 +13,12 @@ export class NavbaruserComponent implements OnInit {
   toggleNavbar() {
     this.navbarOpen = !this.navbarOpen;
   }
-  constructor() { }
+  constructor(private auth:AuthService,private router:Router) { }
+
+  logout(){
+    this.auth.logout();
+    this.router.navigate(['/home']);
+  }
   
   ngOnInit() {
   }

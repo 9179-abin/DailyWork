@@ -3,8 +3,9 @@ import { UserService } from './user.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { User } from '../models/user';
+import { environment } from 'src/environments/environment';
 
-const url = "http://localhost:8765/user-service/login/";
+const url = environment.host + "user-service/login/";
 
 @Injectable({
   providedIn: 'root'
@@ -58,7 +59,8 @@ export class AuthService {
   }
   logout() {
     sessionStorage.removeItem('username');
-    sessionStorage.removeItem("token")
+    sessionStorage.removeItem("token");
+    sessionStorage.removeItem("userType");
   }
   getUserDetails(): string {
     let user = sessionStorage.getItem('usename');

@@ -23,17 +23,27 @@ export class ComparechartsComponent implements OnInit {
   compareCompany(){
     localStorage.removeItem("c1");
     localStorage.removeItem("c2");
-    localStorage.setItem("c1",this.compare.value['c1']);
-    localStorage.setItem("c2",this.compare.value['c2']);
-    this.router.navigate(['/showcharts'])
+    localStorage.setItem("c1",this.compare.value['comp']);
+    localStorage.setItem("c2",this.compare.value['compa']);
+
+
+    this.router.navigate(['/showcharts'], {
+      queryParams: {
+        formData: JSON.stringify(this.compare.value)
+      }
+    });
   }
   ngOnInit() {
     this.service.getAllCompany().subscribe(data =>{
       this.company=data;
     });
     this.compare = this.formBuilder.group({
-      c1:[''],
-      c2:['']
+      comp:[''],
+      compa:[''],
+      stock1:[''],
+      startdate:[''],
+      enddate:['']
+
     });
     // this.filteredOptions = this.myControl.valueChanges
     //   .pipe(
