@@ -90,32 +90,7 @@
                         <option *ngFor="let comp of company" value={{comp.id}}>{{comp.companyName}}</option>
                     </datalist>
                 </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text">Stock Exchange</label>
-                    </div>
-                    <select class="custom-select" id="stockExchange" formControlName="stock2">
-                        <option selected>Choose Stock Exchange...</option>
-                        <option value="BSE">BSE</option>
-                        <option value="NSE">NSE</option>
-                        <option value="NASDAQ">NASDAQ</option>
-                        <option value="NYSE">NYSE</option>
-                    </select>
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text">Start Date</label>
-                    </div>
-                    <input type="date" class="form-control" formControlName="startdate"/>
-
-                </div>
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <label class="input-group-text">End Date</label>
-                    </div>
-                    <input type="date" class="form-control" formControlName="enddate"/>
-
-                </div>
+               
                 <div class="text-center">
                 <div class="col">
                     <button type="submit" class="btn btn-success"  (click)="compareCompany()">Compare</button>

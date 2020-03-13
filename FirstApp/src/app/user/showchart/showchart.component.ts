@@ -15,66 +15,120 @@ import { ActivatedRoute } from '@angular/router';
 
 
 export class ShowchartComponent implements OnInit {
-   compareData:CompareCompany;
-   // c1:number;
-   // c2:number;
-   // company:Company[];
-   // stprice:StockPrices[];
-   // d1:number[]=[];
-   // d2:number[]=[];
-   // i:number;
-   // j:number;
-   // n:number;
-  constructor(private companyService:CompanyService, private stockPriceService:StockPricesService, private route: ActivatedRoute) { }
-    chartOne = Highcharts;
-    chartOneOptions: any;
-  ngOnInit() {
-   this.compareData = JSON.parse(this.route.snapshot.queryParams.formData);
-   let series: any = []
-   let categories: any[] = [];
-   // this.c1=+localStorage.getItem("c1");
-   // this.c2=+localStorage.getItem("c2");
-   // this.companyService.getAllCompanies().subscribe(data =>{
-   //    this.company=data;
-   // });
-   // this.stockPriceService.getAllStockPrices().subscribe(data =>{
-   //    this.stprice=data;
-   //    for(this.i=0;this.i<this.stprice.length;this.i++){
-   //       if(data[this.i].companyCode==this.c1){
-   //          this.d1.push(data[this.i].stockPrice);
-   //       }
-   //       if(data[this.i].companyCode==this.c2){
-   //          this.d2.push(data[this.i].stockPrice);
-   //       }
-   //    }
-   //    console.log(this.d1);
-   //    console.log(this.d2);
-   // });
-  }
-  title = 'charts';
-  data = [{
-          name: 'example',
-          data: []
-       },{
-          name: 'Nicesnippets.com',
-          data: []
-       }];
-  highcharts = Highcharts;
-  chartOptions = {   
-    chart: {
+   
+   c1:number;
+   c2:number;
+   e1:string;
+   e2:string;
+   company:Company[];
+   stprice:StockPrices[];
+   d1:number[]=[];
+   d2:number[]=[];
+   d3:string[]=[];
+   i:number;
+
+   title = "app";
+   chart;
+   updateFlag = false;
+   Highcharts = Highcharts;
+   chartConstructor = "chart";
+   chartCallback;
+   chartOptions = {
+     chart: {
        type: "column"
     },
-    title: {
-       text: "Monthly Site Visitor"
-    },
-    xAxis:{
-       categories:["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
-    },
-    yAxis: {          
-       title:{
-          text:"Visitors"
-       } 
-    },
-    series: this.data
-  };
+     series: [
+       {
+         name: '',
+         data: []
+       },
+       {
+         name: '',
+         data: []
+       }
+     ],
+     exporting: {
+       enabled: true
+     },
+     xAxis: {
+      categories:[]
+  },
+     yAxis: {
+       allowDecimals: true,
+       title: {
+         text: "Price"
+       }
+     }
+   };
+   
+   
+  constructor(private companyService:CompanyService, private stockPriceService:StockPricesService) {
+  
+
+   }
+    chartOne = Highcharts;
+    chartOneOptions: any;
+    
+  ngOnInit() {
+   this.chartCallback = chart => {
+
+      this.chart = chart;
+    };
+   this.c1=+localStorage.getItem("c1");
+   this.c2=+localStorage.getItem("c2");
+   this.companyService.getAllCompanies().subscribe(data =>{
+      this.company=data;
+      for(this.i=0;this.i<this.company.length;this.i++){
+         if(data[this.i].id==this.c1){
+            this.e1=data[this.i].companyName;
+         }
+         if(data[this.i].id==this.c2){
+            this.e2=data[this.i].companyName;
+         }
+      }
+   });
+   
+   this.stockPriceService.getAllStockPrices().subscribe(data =>{
+      this.stprice=data;
+      for(this.i=0;this.i<this.stprice.length;this.i++){
+         if(data[this.i].companyCode==this.c1){
+            this.d1.push(data[this.i].stockPrice);
+            this.d3.push(data[this.i].date.toString());
+         }
+         if(data[this.i].companyCode==this.c2){
+            this.d2.push(data[this.i].stockPrice);
+         }
+      }
+      this.updateChart();
+   });
+   
+  }
+  updateChart() {
+   const self = this,
+     chart = this.chart;
+   chart.showLoading();
+   setTimeout(() => {
+     chart.hideLoading();
+     self.chartOptions
+     .series = [
+       {
+         name: this.e1,
+         data: this.d1
+       },
+       {
+         name:this.e2,
+         data: this.d2
+       }
+     ];
+     
+     self.chartOptions.xAxis = {
+      categories:this.d3
+     }
+     
+
+     self.updateFlag = true;
+   }, 2000);
+ }
+
+  
 }

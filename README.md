@@ -227,3 +227,21 @@ full stack trainee
 	Continuos Integration
 	Dockers
 	Continuos Delivery
+##Day 57 07-03-2020
+	LoginValidations
+	HighCharts
+	Importing File
+##Day 58
+	SpringSecurityForLoginService
+	Authorization
+##Day 59
+	Zenkins
+	pipeline
+	project	
+##Day 60
+	LoginAuthentication
+	Project
+##Day 61
+	Project
+##Day 62
+	Project
