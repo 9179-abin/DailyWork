@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<!-- <bean id="address" class="com.training.model.AddressEntity"
+	p:id="201" p:houseNumber="e423" p:street="@nd Street" p:city="Kochi" 
+	p:state="Kerala"></bean> -->
+	
+	<!-- <bean id="user" class="com.training.model.UserEntity"
+	p:id="2111" p:username="user123" p:password1="user@123" p:password2="user@123" p:email="user@gmail.com" 
+	p:phone="234325325" p:enabled="true" p:address-ref="address"></bean> -->
+	
+	<bean id="user" class="com.training.model.UserEntity"
+	c:id="22344" c:username="abin" c:password1="abin1234" c:password2="abin1234"
+	c:email="abin2gmail.com" c:phone="13242152" c:enabled="true" c:address-ref="address"></bean>
+	
+	<bean id="address" class="com.training.model.AddressEntity"
+	c:id="201" c:houseNumber="e423" c:street="@nd Street" c:city="Kochi" 
+	c:state="Kerala"></bean>
+
+</beans>

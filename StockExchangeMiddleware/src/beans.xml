@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+	<bean id="user" class="com.training.model.UserEntity">
+		<property name="id" value="101" />
+		<property name="username" value="admin" />
+		<property name="password1" value="admin@123" />
+		<property name="password2" value="admin@123" />
+		<property name="email" value="admin@gmail.com" />
+		<property name="phone" value="43436363" />
+		<property name="enabled" value="true" />
+		<property name="address">
+			<bean name="address" class="com.training.model.AddressEntity">
+				<property name="id" value="123"></property>
+				<property name="city" value="Kochi"></property>
+				<property name="state" value="Kerala"></property>
+				<property name="houseNumber" value="F123"></property>
+				<property name="street" value="Vytila Hub"></property>
+			
+			</bean>		
+		
+		</property>
+		
+<!-- 	<constructor-arg value="102" name="id" type="int"/>
+		<constructor-arg value="user" name="usernmae"/>
+		<constructor-arg value="pass1" name="password1"/>
+		<constructor-arg value="pass2" name="password2"/>
+		<constructor-arg value="user@gmail.com" name="email"/>
+		<constructor-arg value="34634643" name="phone" />
+		<constructor-arg name="enabled" value="true" /> -->
+	</bean>
+</beans>

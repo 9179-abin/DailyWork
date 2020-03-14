@@ -13,44 +13,75 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cts.project.dto.StockExchangeDTO;
 import com.cts.project.models.StockExchange;
 import com.cts.project.repo.StockExchangeRepo;
+import com.cts.project.services.StockExchangeServices;
 
 @CrossOrigin(origins = "*")
 @RestController
 public class StockExchangeRestServiceController {
 	
 	@Autowired
-	StockExchangeRepo sr;
+	StockExchangeRepo stockExchangeRepo;
+	
+	@Autowired
+	StockExchangeServices stockExchangeServices;
+	
+//	@GetMapping("/stocks")
+//	public List<StockExchange> findAll(){
+//		return sr.findAll(); 
+//	}
 	
 	@GetMapping("/stocks")
 	public List<StockExchange> findAll(){
-		return sr.findAll();
+		return stockExchangeServices.getAll();
 	}
 	
 	@GetMapping("/stocks/{id}")
 	public StockExchange findOne(@PathVariable int id) {
-		Optional<StockExchange> se = sr.findById(id);
-		StockExchange str = se.get();
+		StockExchange str = stockExchangeServices.getOne(id);
 		return str;
 	}
 	
+//	@GetMapping("/stocks/{id}")
+//	public StockExchange findOne(@PathVariable int id) {
+//		Optional<StockExchange> se = sr.findById(id);
+//		StockExchange str = se.get();
+//		return str;
+//	}
+	
 	@PostMapping("/stocks")
-	public StockExchange save(@RequestBody StockExchange str) {
-		
-		StockExchange se = sr.save(str);
-		return se;
+	public String save(@RequestBody StockExchangeDTO stockExchangeDTO) {
+		String b;
+		b = stockExchangeServices.insert(stockExchangeDTO);
+		return b;
 	}
+	
+	
+//	@PostMapping("/stocks")
+//	public StockExchange save(@RequestBody StockExchange str) {
+//		
+//		StockExchange se = sr.save(str);
+//		return se;
+//	}
 	
 	@DeleteMapping("/stocks/{id}")
 	public void delete(@PathVariable int id) {
-		sr.deleteById(id);
+		stockExchangeServices.remove(id);
 	}
 	
+	
+//	@DeleteMapping("/stocks/{id}")
+//	public void delete(@PathVariable int id) {
+//		sr.deleteById(id);
+//	}
+	
 	@PutMapping("/stocks")
-	public StockExchange update(@RequestBody StockExchange se) {
-		StockExchange str = sr.save(se);
-		return str;
+	public String update(@RequestBody StockExchangeDTO stockExchangeDTO) {
+		String c;
+		c=stockExchangeServices.alter(stockExchangeDTO);
+		return c;
 	}
 	
 

@@ -1,7 +1,7 @@
 package com.cts.project.controller;
 
 import java.util.List;
-import java.util.Optional;
+//import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,15 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cts.project.dto.CompanyDTO;
 import com.cts.project.models.Company;
-import com.cts.project.repo.CompanyRepo;
+//import com.cts.project.repo.CompanyRepo;
 import com.cts.project.services.CompanyServices;
 
 @CrossOrigin(origins = "*")
 @RestController
 public class CompanyRestServiceController {
 
-	@Autowired
-	CompanyRepo cr;
+//	@Autowired
+//	CompanyRepo cr;
 	
 	@Autowired
 	CompanyServices cs;

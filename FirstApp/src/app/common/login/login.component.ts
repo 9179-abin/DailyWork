@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
       if(sessionStorage.getItem('userType')==='user'){
         localStorage.removeItem('userId');
         localStorage.setItem('userId',data.id.toString());
-        console.log(data);
         if(data.enabled){
           this.message="Login Successfull!";
           // $('#myMess').modal('show');
@@ -64,77 +63,6 @@ export class LoginComponent implements OnInit {
 
 
 
-  // onLog()
-  // {
-    
-  //   this.n=this.users.length;
-  //   if(this.val=='1')
-  //   {
-  //     this.isAdmin=true;
-  //     for(this.i=0;this.i<this.n;this.i++)
-  //     {
-  //       if((this.logged.value['name']==='admin') && (this.logged.value['pass']==='password'))
-  //       {
-  //         console.log(this.users[this.i].username,this.logged.value['name']);
-  //         this.valid=true;
-  //         break;
-  //       }
-  //       else{
-  //         console.log(this.users[this.i].username,this.logged.value['name']);
-  //         this.valid=false;
-  //       }
-  //     }
-  //     if(this.valid===true)
-  //     {
-  //       alert("Welcome");
-  //       localStorage.removeItem('who');
-  //       localStorage.setItem('who','admin');
-  //       this.router.navigate(['/adminservices']);
-  //     }
-  //     else{
-  //       alert("Wrong Credentials!..Try Again");
-  //       this.router.navigate(['/home']);
-  //     }
-
-  //   }
-  //   else if(this.val=='0')
-  //   {
-  //     this.isAdmin=false;
-  //     for(this.i=0;this.i<this.n;this.i++)
-  //     {
-  //       if((this.users[this.i].username===this.logged.value['name']) && (this.users[this.i].password1===this.logged.value['pass']))
-  //       {
-  //         console.log(this.users[this.i].username,this.logged.value['name'])
-  //         this.valid=true;
-  //         break;
-  //       }
-  //       else{
-  //         console.log(this.users[this.i].username,this.logged.value['name'])
-  //         this.valid=false;
-  //       }
-  //     }
-  //     if(this.valid===true)
-  //     {
-  //       alert("Welcome");
-  //       localStorage.removeItem('userId');
-  //       localStorage.setItem('userId',this.users[this.i].id.toString());
-  //       this.router.navigate(['/userLanding']);
-  //     }
-  //     else{
-  //       alert("Wrong Credentials!..Try Again");
-  //       this.router.navigate(['/home']);
-  //     }
-
-  //   }  
-  // }
-  // onAdmin(){
-  //   if(this.val=='1'){
-  //     this.isAdmin=true;
-  //     }
-  //   else if(this.val=='0'){
-  //     this.isAdmin=false;
-  //   }  
-  // }
  
   ngOnInit() {
     this.loginForm=this.formBuilder.group({
@@ -143,14 +71,7 @@ export class LoginComponent implements OnInit {
     })
 
 
-  //   this.activatedRoute.paramMap.subscribe(params => { 
-  //     this.val = params.get('id'); 
-  //     this.onAdmin();
-  // });
-  // this.services.getAllUsers().subscribe(data =>{
-  //   this.users=data;
-  // });
-      // alert('Welcome : '+this.val);
+ 
   }
 }
 

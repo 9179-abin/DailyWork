@@ -3,11 +3,10 @@ package com.cts.training.userservice;
 import java.util.List;
 import java.nio.charset.StandardCharsets;
 import java.util.Base64;
-import java.util.List;
-import java.util.NoSuchElementException;
+
 
 import javax.servlet.http.HttpServletRequest;
-import org.springframework.http.HttpHeaders;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
